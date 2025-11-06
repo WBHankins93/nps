@@ -46,18 +46,18 @@ export default function GallerySection() {
   ];
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#f8fbff] via-white to-[#e3f2fd] py-20 md:py-24 px-6 md:px-12 lg:px-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#f8fbff] via-white to-[#e3f2fd] py-20 md:py-24 px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40 relative overflow-hidden">
+      <div className="w-full">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0a4c7a] mb-6">
             Our Work
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
             Take a look at some of our recent projects and see the quality we bring to every pool.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 xl:gap-16">
           {galleryImages.map((image, index) => (
             <div
               key={image.id}

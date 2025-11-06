@@ -55,19 +55,19 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-white py-20 md:py-24 px-6 md:px-12 lg:px-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="min-h-screen w-full flex items-center justify-center bg-white py-20 md:py-24 px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40 relative overflow-hidden">
+      <div className="w-full">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0a4c7a] mb-6">
             Our Services
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
             Comprehensive pool care tailored to your needs. Every pool is unique,
             and we provide customized quotes for all our services.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-10 lg:gap-16 xl:gap-20 mb-16">
           {services.map((service, index) => (
             <div
               key={index}

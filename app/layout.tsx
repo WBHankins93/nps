@@ -1,5 +1,30 @@
 import type { Metadata } from "next";
+import { Montserrat, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+
+// Modern, clean sans-serif for headings
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+// Clean, readable sans-serif for body text
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
+
+// Elegant serif for special headings/accents
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "NOLA Pool Solutions | Premium Pool Services in New Orleans",
@@ -20,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} antialiased`}>
         {children}
       </body>
     </html>

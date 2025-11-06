@@ -40,18 +40,18 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#0a4c7a] via-[#1e88e5] to-[#42a5f5] py-20 md:py-24 px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40 relative overflow-hidden">
-      <div className="w-full">
-        <div className="text-center mb-20">
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#0a4c7a] via-[#1e88e5] to-[#42a5f5] py-20 md:py-24 px-6 md:px-10 lg:px-16 relative overflow-hidden">
+      <div className="w-full max-w-[1600px] mx-auto">
+        <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
             Get In Touch
           </h2>
-          <p className="text-xl md:text-2xl text-blue-100 font-light">
+          <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto font-light">
             Ready to experience premier pool service? Contact us today for a free quote!
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 xl:gap-24">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
           {/* Contact Form */}
           <div className="bg-white rounded-3xl p-10 md:p-12 shadow-2xl">
             <h3 className="text-3xl font-bold text-[#0a4c7a] mb-8">Send Us a Message</h3>

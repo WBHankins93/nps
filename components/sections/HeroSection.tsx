@@ -10,24 +10,24 @@ export default function HeroSection({ onNavigateToContact }: HeroSectionProps) {
       {/* Water ripple effect overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,76,122,0.1)_100%)]"></div>
 
-      <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-20 md:py-24">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 py-20 md:py-24">
         <div className="text-center">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight">
             NOLA Pool Solutions
           </h1>
 
-          <p className="text-xl md:text-2xl lg:text-3xl text-blue-100 mb-16 font-light">
+          <p className="text-xl md:text-2xl lg:text-3xl text-blue-100 mb-16 max-w-4xl mx-auto font-light">
             Premier Pool Services in the Heart of New Orleans
           </p>
 
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 md:p-16 lg:p-20 mb-16 border border-white/20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Who We Are</h2>
-            <p className="text-lg md:text-xl lg:text-2xl text-blue-50 mb-16 leading-relaxed font-light">
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 md:p-14 lg:p-16 mb-16 border border-white/20">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Who We Are</h2>
+            <p className="text-lg md:text-xl lg:text-2xl text-blue-50 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
               Your trusted partner for exceptional pool maintenance, repair, and renovation services.
               We bring professional care and New Orleans spirit to every pool we service.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
               {/* Mission */}
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 hover:bg-white/10 transition-all">
                 <div className="w-16 h-16 bg-[#d4af37] rounded-full flex items-center justify-center mb-6 mx-auto">

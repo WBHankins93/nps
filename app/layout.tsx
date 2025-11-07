@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter, Playfair_Display } from "next/font/google";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 // Modern, clean sans-serif for headings
@@ -46,7 +48,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} antialiased`}>
-        {children}
+        <Navigation />
+        <main className="relative flex-1 overflow-hidden">{children}</main>
+        <Footer />
       </body>
     </html>
   );

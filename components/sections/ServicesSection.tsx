@@ -55,53 +55,68 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-white py-20 md:py-24 px-6 md:px-10 lg:px-16 relative overflow-hidden">
-      <div className="w-full max-w-[1600px] mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0a4c7a] mb-6">
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-[#F8FBFF] via-white to-[#E8F4F8] py-16 md:py-24 lg:py-32 px-6 md:px-10 lg:px-16 relative overflow-hidden">
+      {/* More visible water texture background */}
+      <div 
+        className="absolute inset-0 opacity-[0.15]"
+        style={{
+          backgroundImage: 'url(/adheesha-paranagama-kOYh8C_xLUQ-unsplash.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      
+      {/* Subtle gradient overlay to maintain readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/40"></div>
+      
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto">
+        <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1F3F] mb-6 md:mb-8">
             Our Services
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#1B5A7D] to-transparent mx-auto mb-8 md:mb-10"></div>
+          <p className="text-lg md:text-xl lg:text-2xl text-[#536471] max-w-3xl mx-auto font-light leading-relaxed px-4">
             Comprehensive pool care tailored to your needs. Every pool is unique,
             and we provide customized quotes for all our services.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10 mb-14">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-10 lg:gap-12 mb-16 md:mb-20">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-[#1e88e5] hover:-translate-y-1"
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-10 md:p-12 lg:p-14 shadow-md hover:shadow-lg transition-all duration-500 border border-white/50 hover:border-[#2C7DA0]/30 hover:-translate-y-1 group"
             >
-              <div className="text-[#1e88e5] mb-8 flex justify-center">
+              <div className="text-[#1B5A7D] mb-8 md:mb-10 flex justify-center group-hover:scale-110 transition-transform duration-300">
                 {service.icon}
               </div>
 
-              <h3 className="text-3xl font-bold text-[#0a4c7a] mb-6 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#0B1F3F] mb-6 md:mb-8 text-center">
                 {service.title}
               </h3>
 
-              <p className="text-gray-700 mb-8 text-center leading-relaxed text-lg">
+              <p className="text-[#536471] mb-8 md:mb-10 text-center leading-relaxed text-base md:text-lg">
                 {service.description}
               </p>
 
-              <ul className="space-y-4">
+              <ul className="space-y-4 md:space-y-5">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-[#1e88e5] flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 md:w-6 md:h-6 text-[#2C7DA0] flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      strokeWidth={2.5}
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span className="text-gray-600 text-base lg:text-lg">{feature}</span>
+                    <span className="text-[#536471] text-sm md:text-base lg:text-lg leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -109,11 +124,11 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="mt-20 text-center bg-gradient-to-r from-[#1e88e5] to-[#42a5f5] rounded-3xl p-12 md:p-16 text-white">
-          <p className="text-2xl md:text-3xl font-semibold mb-4">
+        <div className="mt-16 md:mt-20 text-center bg-gradient-to-r from-[#1B5A7D] to-[#2C7DA0] rounded-2xl p-12 md:p-14 lg:p-16 text-white shadow-lg">
+          <p className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto">
             All services are quote-based to ensure you get the best value for your specific needs.
           </p>
-          <p className="text-lg md:text-xl text-blue-100 font-light">
+          <p className="text-base md:text-lg lg:text-xl text-white/90 font-light max-w-2xl mx-auto">
             Contact us today for a free, no-obligation consultation and quote.
           </p>
         </div>

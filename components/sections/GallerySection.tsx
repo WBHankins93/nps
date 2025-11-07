@@ -5,114 +5,134 @@ import { useState } from 'react';
 export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Placeholder images - client can replace with actual pool photos
+  // Actual pool images from /public directory
   const galleryImages = [
     {
       id: 1,
       title: 'Crystal Clear Pool',
       description: 'Residential pool maintenance',
-      placeholder: 'Pool maintenance project showcasing crystal clear water',
+      image: '/adonyi-gabor-DfSDlvCZz40-unsplash.jpg',
+      alt: 'Crystal clear residential pool with perfect water maintenance',
     },
     {
       id: 2,
       title: 'Equipment Installation',
       description: 'New pump and filter system',
-      placeholder: 'Professional equipment installation',
+      image: '/artem-militonian-UYW6FZLlnL8-unsplash.jpg',
+      alt: 'Professional pool equipment installation',
     },
     {
       id: 3,
       title: 'Pool Renovation',
       description: 'Complete pool resurfacing',
-      placeholder: 'Beautiful pool renovation project',
+      image: '/jubeo-hernandez-ZmWLGkPe1Sg-unsplash.jpg',
+      alt: 'Beautiful pool renovation project with modern design',
     },
     {
       id: 4,
       title: 'Tile Work',
       description: 'Custom tile installation',
-      placeholder: 'Elegant custom tile work',
+      image: '/tim-bermudez-sIiyCDSbDpE-unsplash.jpg',
+      alt: 'Elegant custom tile work on pool edge',
     },
     {
       id: 5,
-      title: 'Commercial Pool',
-      description: 'Large commercial pool service',
-      placeholder: 'Commercial pool maintenance',
+      title: 'Pool Cleaning',
+      description: 'Weekly maintenance service',
+      image: '/adheesha-paranagama-kOYh8C_xLUQ-unsplash.jpg',
+      alt: 'Professional pool cleaning and maintenance service',
     },
     {
       id: 6,
-      title: 'Pool Cleaning',
-      description: 'Weekly maintenance service',
-      placeholder: 'Professional pool cleaning service',
+      title: 'Pool Design',
+      description: 'Custom pool design and construction',
+      image: '/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg',
+      alt: 'Stunning custom pool design with beautiful water features',
     },
   ];
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#f8fbff] via-white to-[#e3f2fd] py-20 md:py-24 px-6 md:px-10 lg:px-16 relative overflow-hidden">
-      <div className="w-full max-w-[1600px] mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0a4c7a] mb-6">
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-white via-[#F8FBFF] to-white py-16 md:py-24 lg:py-32 px-6 md:px-10 lg:px-16 relative overflow-hidden">
+      <div className="w-full max-w-[1400px] mx-auto">
+        <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1F3F] mb-6 md:mb-8">
             Our Work
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#1B5A7D] to-transparent mx-auto mb-8 md:mb-10"></div>
+          <p className="text-lg md:text-xl lg:text-2xl text-[#536471] max-w-3xl mx-auto font-light leading-relaxed px-4">
             Take a look at some of our recent projects and see the quality we bring to every pool.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              className="group relative aspect-[4/3] bg-gradient-to-br from-[#1e88e5] to-[#42a5f5] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-2"
+              className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2"
               onClick={() => setSelectedImage(index)}
             >
-              {/* Placeholder with icon */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-white">
-                <svg
-                  className="w-24 h-24 mb-6 opacity-50 group-hover:opacity-70 transition-opacity"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-                </svg>
-                <h3 className="text-2xl font-bold text-center mb-3">{image.title}</h3>
-                <p className="text-base text-blue-100 text-center">{image.description}</p>
+              {/* Actual Image */}
+              <img
+                src={image.image}
+                alt={image.alt}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              
+              {/* Gradient overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              
+              {/* Content overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">
+                  {image.title}
+                </h3>
+                <p className="text-sm md:text-base text-white/90 drop-shadow-md">
+                  {image.description}
+                </p>
               </div>
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
-                <div className="p-6 w-full">
-                  <p className="text-white text-base">{image.placeholder}</p>
-                </div>
+              {/* Hover effect indicator */}
+              <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Note for client */}
-        <div className="mt-16 text-center bg-white rounded-2xl p-8 md:p-10 shadow-md border border-blue-100">
-          <p className="text-gray-700 text-lg">
-            <strong className="text-[#1e88e5]">Note:</strong> Replace these placeholders with your actual pool project photos
-            to showcase your excellent work to potential customers.
-          </p>
-        </div>
 
         {/* Lightbox Modal */}
         {selectedImage !== null && (
           <div
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6"
+            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 md:p-6"
             onClick={() => setSelectedImage(null)}
           >
             <button
-              className="absolute top-6 right-6 text-white hover:text-[#d4af37] transition-colors"
-              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-[#D4AF6E] transition-colors z-10 bg-black/50 rounded-full p-2 backdrop-blur-sm"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+              aria-label="Close lightbox"
             >
-              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="max-w-4xl w-full bg-gradient-to-br from-[#1e88e5] to-[#42a5f5] rounded-2xl p-12 text-white">
-              <h3 className="text-4xl font-bold mb-6">{galleryImages[selectedImage].title}</h3>
-              <p className="text-2xl mb-4">{galleryImages[selectedImage].description}</p>
-              <p className="text-xl text-blue-100">{galleryImages[selectedImage].placeholder}</p>
+            <div 
+              className="max-w-6xl w-full rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={galleryImages[selectedImage].image}
+                alt={galleryImages[selectedImage].alt}
+                className="w-full h-auto max-h-[80vh] object-contain"
+              />
+              <div className="bg-gradient-to-r from-[#1B5A7D] to-[#2C7DA0] p-6 md:p-8 text-white">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">{galleryImages[selectedImage].title}</h3>
+                <p className="text-lg md:text-xl text-white/90">{galleryImages[selectedImage].description}</p>
+              </div>
             </div>
           </div>
         )}

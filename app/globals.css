@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
 :root {
-  /* NOLA Pool Solutions Color Palette - Blues and Whites */
-  --color-deep-blue: #0a4c7a;
-  --color-ocean-blue: #1e88e5;
-  --color-pool-blue: #42a5f5;
+  /* NOLA Pool Solutions - Refined Color Palette */
+  /* Sophisticated Water Blues - Depth, not cartoon */
+  --color-midnight: #0B1F3F;        /* Deepest blue - primary brand */
+  --color-navy: #174164;            /* Deep water blue */
+  --color-ocean: #1B5A7D;           /* Mid-depth ocean (replaces old ocean-blue) */
+  --color-cerulean: #2C7DA0;        /* Clear water blue */
+  --color-azure: #468FAF;           /* Bright pool blue (replaces old pool-blue) */
+  
+  /* Legacy color mappings for backwards compatibility */
+  --color-deep-blue: var(--color-midnight);
+  --color-ocean-blue: var(--color-ocean);
+  --color-pool-blue: var(--color-azure);
   --color-light-blue: #90caf9;
   --color-water-blue: #b3e5fc;
+  
+  /* Neutrals - Breathing space */
   --color-white: #ffffff;
   --color-off-white: #f8fbff;
+  --color-pearl: #FAFCFD;           /* Warm white background */
+  --color-mist: #E8F4F8;            /* Subtle blue-white */
+  
+  /* Text Colors */
   --color-text-dark: #1a1a1a;
   --color-text-light: #4a5568;
-  --color-gold: #d4af37; /* For NOLA accents */
-  --color-purple: #6b21a8; /* For Mardi Gras accent */
+  --color-text-primary: #0F1419;
+  --color-text-secondary: #536471;
+  
+  /* NOLA Accents - Refined elegance (not harsh gold) */
+  --color-brass: #B8956A;           /* Antique brass - main NOLA accent */
+  --color-bronze: #8C7051;          /* Deep bronze */
+  --color-gold-shimmer: #D4AF6E;    /* Subtle gold highlight */
+  --color-gold: var(--color-brass); /* Legacy mapping */
+  --color-purple: #4A3B5C;          /* Muted Mardi Gras purple */
 
-  --background: var(--color-off-white);
+  --background: var(--color-pearl);
   --foreground: var(--color-text-dark);
+  
+  /* Gradients - Liquid elegance */
+  --gradient-hero: linear-gradient(135deg, #0B1F3F 0%, #174164 25%, #1B5A7D 50%, #2C7DA0 75%, #468FAF 100%);
+  --gradient-ocean: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-cerulean) 100%);
+  --gradient-brass: linear-gradient(135deg, var(--color-brass) 0%, var(--color-gold-shimmer) 100%);
+  
+  /* Shadows - Depth and elevation */
+  --shadow-sm: 0 1px 2px 0 rgba(11, 31, 63, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(11, 31, 63, 0.08), 0 2px 4px -1px rgba(11, 31, 63, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(11, 31, 63, 0.12), 0 4px 6px -2px rgba(11, 31, 63, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(11, 31, 63, 0.15), 0 10px 10px -5px rgba(11, 31, 63, 0.04);
+  --shadow-glow-brass: 0 0 20px rgba(184, 149, 106, 0.3);
+  
+  /* Spacing Scale - Generous rhythm */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  --space-4xl: 6rem;     /* 96px */
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  /* Inject new colors into Tailwind */
+  --color-midnight: var(--color-midnight);
+  --color-navy: var(--color-navy);
+  --color-ocean: var(--color-ocean);
+  --color-cerulean: var(--color-cerulean);
+  --color-azure: var(--color-azure);
+  --color-brass: var(--color-brass);
+  --color-bronze: var(--color-bronze);
+  --color-gold-shimmer: var(--color-gold-shimmer);
+  --color-pearl: var(--color-pearl);
+  --color-mist: var(--color-mist);
+  
+  /* Legacy mappings */
   --color-deep-blue: var(--color-deep-blue);
   --color-ocean-blue: var(--color-ocean-blue);
   --color-pool-blue: var(--color-pool-blue);
@@ -43,6 +101,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -52,6 +111,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  min-height: 0;
 }
 
 /* Desktop: Non-scrollable */
@@ -70,7 +137,7 @@ body {
   }
 }
 
-/* Typography */
+/* Typography - Improved spacing and readability */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-montserrat), sans-serif;
   font-weight: 700;
@@ -80,29 +147,103 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.3;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 p {
   font-family: var(--font-inter), sans-serif;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.8;
   margin: 0;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
 }
 
-/* Smooth transitions */
+/* Better paragraph spacing */
+p + p {
+  margin-top: 1.25rem;
+}
+
+/* Smooth transitions - optimized */
 * {
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
 button {
   font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+}
+
+/* Water-themed animations */
+@keyframes water-ripple {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Utility classes for new design system */
+.text-brass {
+  color: var(--color-brass);
+}
+
+.bg-brass {
+  background-color: var(--color-brass);
+}
+
+.text-ocean {
+  color: var(--color-ocean);
+}
+
+.bg-ocean {
+  background-color: var(--color-ocean);
+}
+
+.text-midnight {
+  color: var(--color-midnight);
+}
+
+.bg-midnight {
+  background-color: var(--color-midnight);
+}
+
+.gradient-ocean {
+  background: var(--gradient-ocean);
+}
+
+.gradient-brass {
+  background: var(--gradient-brass);
+}
+
+.gradient-hero {
+  background: var(--gradient-hero);
 }

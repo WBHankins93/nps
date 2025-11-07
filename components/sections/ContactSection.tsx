@@ -40,21 +40,33 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#0a4c7a] via-[#1e88e5] to-[#42a5f5] py-20 md:py-24 px-6 md:px-10 lg:px-16 relative overflow-hidden">
-      <div className="w-full max-w-[1600px] mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#0B1F3F] via-[#1B5A7D] to-[#2C7DA0] py-16 md:py-24 lg:py-32 px-6 md:px-10 lg:px-16 relative overflow-hidden">
+      {/* More visible background image overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.15]"
+        style={{
+          backgroundImage: 'url(/artem-militonian-UYW6FZLlnL8-unsplash.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto">
+        <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
             Get In Touch
           </h2>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto font-light">
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#D4AF6E] to-transparent mx-auto mb-8 md:mb-10"></div>
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto font-light leading-relaxed px-4">
             Ready to experience premier pool service? Contact us today for a free quote!
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-14">
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-10 md:p-12 shadow-2xl">
-            <h3 className="text-3xl font-bold text-[#0a4c7a] mb-8">Send Us a Message</h3>
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-10 md:p-12 lg:p-14 shadow-xl">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#0B1F3F] mb-8 md:mb-10">Send Us a Message</h3>
 
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
@@ -62,9 +74,9 @@ export default function ContactSection() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-7">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-[#536471] mb-2">
                   Name *
                 </label>
                 <input
@@ -74,13 +86,13 @@ export default function ContactSection() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1e88e5] focus:border-transparent transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-[#536471] mb-2">
                   Email *
                 </label>
                 <input
@@ -90,13 +102,13 @@ export default function ContactSection() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1e88e5] focus:border-transparent transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
                   placeholder="your@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-[#536471] mb-2">
                   Phone *
                 </label>
                 <input
@@ -106,13 +118,13 @@ export default function ContactSection() {
                   required
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1e88e5] focus:border-transparent transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
                   placeholder="(504) 555-0123"
                 />
               </div>
 
               <div>
-                <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="serviceType" className="block text-sm font-medium text-[#536471] mb-2">
                   Service Needed *
                 </label>
                 <select
@@ -121,7 +133,7 @@ export default function ContactSection() {
                   required
                   value={formData.serviceType}
                   onChange={handleChange}
-                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1e88e5] focus:border-transparent transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
                 >
                   <option value="">Select a service</option>
                   <option value="maintenance">Pool Maintenance</option>
@@ -132,7 +144,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-[#536471] mb-2">
                   Message *
                 </label>
                 <textarea
@@ -142,7 +154,7 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1e88e5] focus:border-transparent transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base resize-none"
                   placeholder="Tell us about your pool needs..."
                 />
               </div>
@@ -159,48 +171,48 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Information & Quick Actions */}
-          <div className="space-y-8">
+          <div className="space-y-8 md:space-y-10">
             {/* Direct Contact */}
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 border border-white/20">
-              <h3 className="text-3xl font-bold text-white mb-8">Contact Information</h3>
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-10 md:p-12 border border-white/30 shadow-xl">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-10">Contact Information</h3>
 
-              <div className="space-y-6">
+              <div className="space-y-6 md:space-y-8">
                 <a
                   href="mailto:nolapoolsolutions@gmail.com"
-                  className="flex items-center gap-5 text-white hover:text-[#d4af37] transition-colors group"
+                  className="flex items-center gap-4 md:gap-5 text-white hover:text-[#D4AF6E] transition-colors group"
                 >
-                  <div className="w-14 h-14 bg-[#d4af37] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#B8956A] to-[#D4AF6E] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg">
+                    <svg className="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
                     <p className="font-semibold text-sm mb-1">Email</p>
-                    <p className="text-blue-100 text-base">nolapoolsolutions@gmail.com</p>
+                    <p className="text-white/90 text-sm md:text-base">nolapoolsolutions@gmail.com</p>
                   </div>
                 </a>
 
                 <a
                   href="tel:+15045550123"
-                  className="flex items-center gap-5 text-white hover:text-[#d4af37] transition-colors group"
+                  className="flex items-center gap-4 md:gap-5 text-white hover:text-[#D4AF6E] transition-colors group"
                 >
-                  <div className="w-14 h-14 bg-[#d4af37] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#B8956A] to-[#D4AF6E] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg">
+                    <svg className="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
                   <div>
                     <p className="font-semibold text-sm mb-1">Phone</p>
-                    <p className="text-blue-100 text-base">(504) 555-0123</p>
+                    <p className="text-white/90 text-sm md:text-base">(504) 555-0123</p>
                   </div>
                 </a>
               </div>
             </div>
 
             {/* Schedule Appointment */}
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-4">Schedule an Appointment</h3>
-              <p className="text-blue-100 mb-6 leading-relaxed">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-10 md:p-12 border border-white/30 shadow-xl">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Schedule an Appointment</h3>
+              <p className="text-white/80 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
                 Book a convenient time for a consultation or service appointment.
               </p>
               <Button
@@ -214,22 +226,22 @@ export default function ContactSection() {
                 }}
               >
                 View Calendar
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </Button>
             </div>
 
             {/* Leave a Review */}
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-4">Leave Us a Review</h3>
-              <p className="text-blue-100 mb-6 leading-relaxed">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-10 md:p-12 border border-white/30 shadow-xl">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Leave Us a Review</h3>
+              <p className="text-white/80 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
                 Love our service? Share your experience on Google!
               </p>
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full bg-white/10 border-white text-white hover:bg-white hover:text-[#1e88e5]"
+                className="w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-[#1B5A7D]"
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -245,15 +257,6 @@ export default function ContactSection() {
               </Button>
             </div>
           </div>
-        </div>
-
-        {/* Note for implementation */}
-        <div className="mt-12 bg-yellow-50 rounded-2xl p-8 border border-yellow-200">
-          <p className="text-gray-800 text-base">
-            <strong className="text-yellow-800">Developer Note:</strong> The contact form needs to be connected to an email service
-            (like SendGrid, Mailgun, or a serverless function) to send emails to nolapoolsolutions@gmail.com.
-            The Google Calendar and Reviews links need to be updated with actual URLs from Google Workspace and Google Business Profile.
-          </p>
         </div>
       </div>
     </section>

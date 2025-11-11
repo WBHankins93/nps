@@ -2,13 +2,14 @@ import Button from "@/components/Button";
 
 export default function HomeShowcase() {
   return (
-    <section className="relative h-full w-full overflow-hidden">
+    <section className="relative h-full min-h-screen w-full overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: 'url(/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundAttachment: 'scroll',
         }}
       />
 
@@ -20,9 +21,9 @@ export default function HomeShowcase() {
         }}
       />
 
-      <div className="relative z-10 flex h-full items-center justify-center px-6 py-8 md:px-10 lg:px-16">
+      <div className="relative z-10 flex h-full min-h-screen items-center justify-center px-6 py-12 md:px-10 md:py-16 lg:px-16">
         <div className="flex w-full max-w-4xl flex-col items-center text-center">
-          <div className="space-y-4 md:space-y-5">
+          <div className="space-y-6 md:space-y-5">
             <p className="text-sm uppercase tracking-[0.35em] text-white/70 md:text-base">
               Premium Pool Care | New Orleans
             </p>
@@ -37,7 +38,7 @@ export default function HomeShowcase() {
             </p>
           </div>
 
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4 md:mt-16 md:gap-6 lg:mt-20">
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-4 md:mt-20 md:gap-6 lg:mt-24">
             <Button
               variant="primary"
               size="lg"

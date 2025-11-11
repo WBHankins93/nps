@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ServicesSection() {
   const services = [
     {
@@ -10,6 +12,7 @@ export default function ServicesSection() {
       description: 'Weekly or bi-weekly service plans keep chemistry balanced, surfaces spotless, and equipment tuned.',
       imageUrl: '/pool-maintenance.jpg',
       placeholderBg: 'bg-gradient-to-br from-cerulean to-ocean',
+      href: '/services/maintenance',
     },
     {
       title: 'Equipment Expertise',
@@ -22,6 +25,7 @@ export default function ServicesSection() {
       description: 'Dependable diagnostics and repairs for pumps, heaters, automation, and advanced lighting.',
       imageUrl: '/equipment-repair.jpg',
       placeholderBg: 'bg-gradient-to-br from-ocean to-midnight',
+      href: '/services/equipment',
     },
     {
       title: 'Renovation Guidance',
@@ -33,16 +37,17 @@ export default function ServicesSection() {
       description: 'Strategic upgrades that refresh aesthetics, improve efficiency, and extend the life of your pool.',
       imageUrl: '/pool-renovation.jpg',
       placeholderBg: 'bg-gradient-to-br from-cerulean to-navy',
+      href: '/services/renovation',
     },
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-[var(--color-off-white)] via-white to-[var(--color-mist)] py-20 md:py-28">
-      {/* Water texture background */}
-      <div 
-        className="absolute inset-0 opacity-[0.12]"
+    <section className="relative h-full w-full overflow-hidden">
+      {/* Background */}
+      <div
+        className="absolute inset-0 opacity-30 md:opacity-50"
         style={{
-          backgroundImage: 'url(/adheesha-paranagama-kOYh8C_xLUQ-unsplash.jpg)',
+          backgroundImage: 'url(/services-background.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -50,91 +55,103 @@ export default function ServicesSection() {
       />
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white/50" />
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, rgba(248,251,255,0.82) 0%, rgba(255,255,255,0.78) 50%, rgba(232,244,248,0.82) 100%)',
+        }}
+      />
       
-      {/* Centered Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+      {/* Content - Centered with flex */}
+      <div className="relative z-10 flex h-full flex-col px-6 py-8 md:px-10 lg:px-16">
         
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-cerulean text-sm md:text-base font-semibold tracking-[0.2em] uppercase mb-3">
-            Our Services
-          </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-midnight mb-5">
-            Tailored Care for Pools that<br />Demand Excellence
-          </h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-ocean to-transparent mx-auto mb-6" />
-          <p className="text-base md:text-lg text-[var(--color-text-secondary)] max-w-4xl mx-auto font-light leading-relaxed">
-            From weekly maintenance routes to complex repairs and curated upgrade planning, 
-            NOLA Pool Solutions delivers precision care shaped by the unique climate of New Orleans.
-          </p>
+        {/* Header - Compact */}
+        <div className="text-center mb-6 md:mb-8 flex justify-center">
+          <div className="max-w-4xl">
+            <p className="text-cerulean text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-2">
+              NOLA Pool Solutions
+            </p>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-midnight mb-3">
+              Our Services
+            </h1>
+            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-ocean to-transparent mx-auto mb-4" />
+            <p className="text-sm md:text-base text-[var(--color-text-secondary)] font-light leading-relaxed">
+              From weekly maintenance routes to complex repairs and curated upgrade planning, 
+              NOLA Pool Solutions delivers precision care shaped by the unique climate of New Orleans.
+            </p>
+          </div>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="group relative h-[320px] md:h-[360px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
-            >
-              {/* Background */}
-              <div 
-                className={`absolute inset-0 ${service.placeholderBg} transition-transform duration-700 group-hover:scale-105`}
-                style={{
-                  backgroundImage: service.imageUrl ? `url(${service.imageUrl})` : undefined,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/40 to-transparent" />
-              
-              {/* Content */}
-              <div className="absolute inset-0 p-7 md:p-8 flex flex-col justify-end">
-                <div className="bg-cerulean w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center mb-4 md:mb-5 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                  <div className="text-white">
-                    {service.icon}
+        {/* Services Grid - Takes remaining space */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="w-full max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+              {services.map((service) => (
+                <Link
+                  key={service.title}
+                  href={service.href}
+                  className="group relative block h-[320px] cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl md:h-[360px]"
+                >
+                  {/* Background */}
+                  <div 
+                    className={`absolute inset-0 ${service.placeholderBg} transition-transform duration-700 group-hover:scale-105`}
+                    style={{
+                      backgroundImage: service.imageUrl ? `url(${service.imageUrl})` : undefined,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  />
+                  
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/40 to-transparent" />
+                  
+                  {/* Content */}
+                  <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
+                    {/* Icon at top */}
+                    <div className="flex justify-start">
+                      <div className="bg-cerulean w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                        <div className="text-white">
+                          {service.icon}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Text at bottom */}
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3">
-                  {service.title}
-                </h3>
-                
-                <p className="text-white/90 text-sm md:text-base leading-relaxed mb-3 md:mb-4">
-                  {service.description}
-                </p>
-                
-                <div className="flex items-center text-white group-hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-sm font-semibold mr-2">Learn More</span>
-                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </div>
+                </Link>
+              ))}
             </div>
-          ))}
-        </div>
 
-        {/* Quote-Only CTA */}
-        <div className="pt-8">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-ocean to-cerulean" />
-            <div className="relative z-10 text-center p-10 md:p-12 text-white">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Quote-Only Consultations
-              </h3>
-              <p className="text-base md:text-lg text-white/95 mb-3 max-w-3xl mx-auto leading-relaxed">
-                Every pool is different. We assess your system, understand your goals, 
-                and deliver transparent pricing before we begin.
-              </p>
-              <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto mb-6">
-                Residential & Commercial | Licensed & Insured
-              </p>
-              <button className="bg-white text-ocean px-8 py-3 rounded-lg font-semibold text-base hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg">
-                Schedule a Consultation
-              </button>
+            {/* Quote-Only CTA - Compact with proper spacing */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-ocean to-cerulean" />
+              <div className="relative z-10 text-center px-6 py-8 md:px-10 md:py-10 text-white">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  Quote-Only Consultations
+                </h3>
+                <p className="text-sm md:text-base text-white/95 mb-3 max-w-2xl mx-auto leading-relaxed">
+                  Every pool is different. We assess your system, understand your goals, 
+                  and deliver transparent pricing before we begin.
+                </p>
+                <p className="text-xs md:text-sm text-white/80 mb-6">
+                  Residential & Commercial | Licensed & Insured
+                </p>
+                <button className="bg-white text-ocean px-10 py-4 rounded-xl font-semibold text-base hover:bg-white/95 transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg inline-flex items-center gap-3">
+                  Schedule a Consultation
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>

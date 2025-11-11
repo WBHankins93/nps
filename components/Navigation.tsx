@@ -45,10 +45,10 @@ export default function Navigation() {
         backdropFilter: 'blur(12px)',
       }}
     >
-      <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 md:h-24 md:px-10 lg:px-16">
+      <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between pl-8 pr-6 md:h-24 md:pl-12 md:pr-10 lg:pl-16 lg:pr-16 xl:pl-24 xl:pr-20">
         <Link
           href="/"
-          className="flex items-center gap-2 md:gap-3 transition-all duration-300 hover:opacity-80"
+          className="ml-2 flex items-center gap-2 transition-all duration-300 hover:opacity-80 md:ml-4 md:gap-3 lg:ml-6"
         >
           <svg
             className="h-9 w-9 md:h-10 md:w-10 lg:h-11 lg:w-11 transition-transform duration-300 hover:scale-110"

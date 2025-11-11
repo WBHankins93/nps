@@ -47,9 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} antialiased`}>
+      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} antialiased flex flex-col min-h-screen`}>
         <Navigation />
-        <main className="relative flex-1 overflow-hidden">{children}</main>
+        <main className="flex-1 w-full">{children}</main>
         <Footer />
       </body>
     </html>

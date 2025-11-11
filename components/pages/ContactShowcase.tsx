@@ -28,7 +28,7 @@ export default function ContactShowcase() {
             </p>
           </header>
 
-          <div className="grid gap-6 md:grid-cols-[1.05fr_0.95fr] md:gap-8">
+          <div className="grid gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-10 lg:gap-12">
             <div className="flex flex-col justify-between rounded-3xl border border-white/15 bg-white/10 p-8 text-center backdrop-blur-md md:p-12 lg:p-16">
               <div className="space-y-5 md:space-y-6">
                 <section>

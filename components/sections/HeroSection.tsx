@@ -116,7 +116,7 @@ export default function HeroSection({ onNavigateToContact }: HeroSectionProps) {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
             <Button
               variant="primary"
               size="lg"

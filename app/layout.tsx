@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Work_Sans, Playfair_Display } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-// Modern, clean sans-serif for headings
-const montserrat = Montserrat({
+// Modern, friendly sans-serif for headings - professional but warmer than Montserrat
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-montserrat",
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-// Clean, readable sans-serif for body text
-const inter = Inter({
+// Warm, readable sans-serif for body text - more approachable than Inter
+const workSans = Work_Sans({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${workSans.variable} ${plusJakartaSans.variable} ${playfair.variable} antialiased flex flex-col min-h-screen`}>
         <Navigation />
         <main className="flex-1 w-full">{children}</main>
         <Footer />

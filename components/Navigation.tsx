@@ -1,8 +1,9 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
   { href: '/', label: 'Home' },
@@ -48,30 +49,32 @@ export default function Navigation() {
       <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between pl-4 pr-6 md:h-24 md:pl-6 md:pr-10 lg:pl-8 lg:pr-16 xl:pl-10 xl:pr-20">
         <Link
           href="/"
-          className="flex items-center gap-2 transition-all duration-300 hover:opacity-80 md:gap-3"
+          className="flex items-center gap-1 transition-all duration-300 hover:opacity-90 md:gap-2"
         >
-          <svg
-            className="h-9 w-9 md:h-10 md:w-10 lg:h-11 lg:w-11 transition-transform duration-300 hover:scale-110"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            style={{ color: '#1B5A7D' }}
-          >
-            <path d="M12 2C12 2 8 6 8 10C8 12.21 9.79 14 12 14C14.21 14 16 12.21 16 10C16 6 12 2 12 2M12 22C7.58 22 4 18.42 4 14H6C6 17.31 8.69 20 12 20C15.31 20 18 17.31 18 14H20C20 18.42 16.42 22 12 22Z" />
-          </svg>
-          <div className="flex flex-col items-start">
+          <span className="relative block h-12 w-28 pr-1 md:h-14 md:w-32 md:pr-2 lg:h-16 lg:w-36 lg:pr-3">
+            <Image
+              src="/logo.png"
+              alt="NOLA Pool Solutions logo"
+              fill
+              priority
+              className="object-contain"
+              sizes="(max-width: 768px) 128px, (max-width: 1024px) 144px, 160px"
+            />
+          </span>
+          <span className="hidden flex-col leading-tight pr-2 md:flex md:pr-3 lg:pr-4">
             <span
-              className="text-xl font-bold leading-none tracking-tight md:text-2xl"
-              style={{ color: '#0B1F3F' }}
+              className="text-lg font-semibold tracking-tight text-[#0B1F3F] md:text-xl lg:text-2xl"
+              style={{ fontFamily: "'Montserrat', 'Work Sans', sans-serif" }}
             >
-              NOLA
+              NOLA POOL
             </span>
             <span
-              className="mt-0.5 text-xs font-medium leading-none tracking-wide md:text-sm"
-              style={{ color: '#2C7DA0' }}
+              className="text-xs font-medium uppercase tracking-[0.3em] text-[#2C7DA0] md:text-sm"
+              style={{ fontFamily: "'Montserrat', 'Work Sans', sans-serif" }}
             >
-              Pool Solutions
+              Solutions
             </span>
-          </div>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-10 lg:gap-12 md:flex">
@@ -79,7 +82,7 @@ export default function Navigation() {
             <Link
               key={item.href}
               href={item.href}
-              className="group relative py-2 text-base font-medium transition-all duration-300 md:text-lg"
+              className="group relative px-3 py-2 text-base font-medium transition-all duration-300 md:px-4 md:text-lg"
               style={{
                 color: isActive(item.href) ? '#1B5A7D' : '#536471',
               }}

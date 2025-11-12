@@ -104,15 +104,15 @@ export default function ServicesSection() {
       <div className="relative z-10 flex h-full flex-col px-6 py-8 md:px-10 lg:px-16">
         
         {/* Header - Compact */}
-        <div className="text-center mb-6 md:mb-8 flex justify-center">
-          <div className="max-w-4xl">
+        <div className="text-center mb-6 md:mb-8 flex justify-center px-4">
+          <div className="max-w-6xl w-full">
             <p className="text-cerulean text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-2">
               NOLA Pool Solutions
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-midnight mb-3">
               Our Services
             </h1>
-            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-ocean to-transparent mx-auto mb-4" />
+            <div className="w-full max-w-[700px] md:max-w-[1000px] h-0.5 bg-gradient-to-r from-transparent via-ocean to-transparent mx-auto mb-4" />
             <p className="text-sm md:text-base text-[var(--color-text-secondary)] font-light leading-relaxed">
               From weekly maintenance routes to complex repairs and curated upgrade planning, 
               NOLA Pool Solutions delivers precision care shaped by the unique climate of New Orleans.
@@ -121,9 +121,9 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Grid - Takes remaining space */}
-        <div className="flex-1 flex justify-center">
-          <div className="w-full max-w-6xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-20 md:mb-28">
+        <div className="flex-1 flex items-start justify-center overflow-y-auto py-8">
+          <div className="w-full max-w-6xl mx-auto px-4 pb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {services.map((service, index) => (
                 <button
                   key={service.title}
@@ -169,26 +169,29 @@ export default function ServicesSection() {
               ))}
             </div>
 
+            {/* SPACER DIV - Reduced spacing */}
+            <div className="h-10 md:h-12"></div>
+
             {/* Quote-Only CTA - Enhanced spacing and visual appeal */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-r from-ocean to-cerulean" />
-              <div className="relative z-10 text-center px-8 py-10 md:px-12 md:py-14 text-white">
+              <div className="relative z-10 flex flex-col items-center px-8 py-10 md:px-12 md:py-14 text-white">
                 <h3 className="text-2xl md:text-3xl font-bold mb-5 md:mb-6">
                   Quote-Only Consultations
                 </h3>
-                <p className="text-sm md:text-base text-white/95 mb-4 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-sm md:text-base text-white/95 mb-4 max-w-2xl leading-relaxed text-center">
                   Every pool is different. We assess your system, understand your goals,
                   and deliver transparent pricing before we begin.
                 </p>
-                <p className="text-xs md:text-sm text-white/80 mb-8 md:mb-10">
+                <p className="text-xs md:text-sm text-white/80 mb-8 md:mb-10 text-center">
                   Residential & Commercial | Licensed & Insured
                 </p>
                 <Link
                   href="/contact"
-                  className="bg-white text-ocean px-10 py-4 rounded-xl font-semibold text-base hover:bg-white/95 transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg inline-flex items-center gap-3"
+                  className="bg-white text-ocean px-16 py-6 rounded-xl font-semibold text-lg hover:bg-white/95 transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg inline-flex items-center gap-4"
                 >
                   Schedule a Consultation
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </Link>

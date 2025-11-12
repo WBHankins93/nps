@@ -42,7 +42,7 @@ export default function HomeShowcase() {
   }, [testimonials.length]);
 
   return (
-    <section className="relative h-full min-h-screen w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden flex flex-col" style={{ height: 'calc(100vh - 80px - 64px)' }}>
       {/* Background Image */}
       <div
         className="absolute inset-0"
@@ -50,7 +50,6 @@ export default function HomeShowcase() {
           backgroundImage: 'url(/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'scroll',
         }}
       />
 
@@ -63,11 +62,12 @@ export default function HomeShowcase() {
         }}
       />
 
-      <div className="relative z-10 flex h-full min-h-screen flex-col items-center justify-center px-6 py-12 md:px-10 md:py-16 lg:px-16">
+      {/* Content - flex-1 to fill space */}
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-6 md:px-10 lg:px-16">
         
-        {/* Main Content - No Background */}
+        {/* Main Content - REDUCED PADDING - was p-8 md:p-10, now p-4 md:p-6 */}
         <div className="flex w-full max-w-5xl flex-col items-center text-center">
-          <div className="p-8 md:p-10">
+          <div className="p-4 md:p-6">
             <p className="text-xs uppercase tracking-[0.35em] text-white/90 md:text-sm drop-shadow-lg mb-3">
               Premium Pool Care | New Orleans
             </p>
@@ -83,8 +83,8 @@ export default function HomeShowcase() {
           </div>
         </div>
 
-        {/* SPACER DIV */}
-        <div className="h-10 md:h-12"></div>
+        {/* SPACER DIV - REDUCED from h-10 md:h-12 to h-6 md:h-8 */}
+        <div className="h-6 md:h-8"></div>
 
         {/* Buttons Container - Separate */}
         <div className="flex w-full max-w-5xl items-center justify-center">
@@ -96,14 +96,6 @@ export default function HomeShowcase() {
               className="min-w-[200px] bg-white text hover:bg-white/90 text-center"
             >
               Start Your Quote
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-              >
-              </svg>
             </Button>
             <Button
               variant="primary"
@@ -112,26 +104,18 @@ export default function HomeShowcase() {
               className="min-w-[200px] text-center"
             >
               View Services
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-              >
-              </svg>
             </Button>
           </div>
         </div>
 
-        {/* SPACER DIV */}
-        <div className="h-12 md:h-16"></div>
+        {/* SPACER DIV - REDUCED from h-12 md:h-16 to h-8 md:h-10 */}
+        <div className="h-8 md:h-10"></div>
 
         {/* Testimonial Carousel */}
         <div className="w-full max-w-3xl">
           <div className="relative rounded-3xl overflow-hidden shadow-xl">
             <div className="absolute inset-0 bg-gradient-to-r from-ocean to-cerulean" />
-            <div className="relative z-10 flex flex-col items-center justify-center px-10 py-10 md:px-16 md:py-16 text-white min-h-[14rem] md:min-h-[18rem]">
+            <div className="relative z-10 flex flex-col items-center justify-center px-6 py-6 md:px-8 md:py-8 text-white min-h-[12rem] md:min-h-[14rem]">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}

@@ -29,50 +29,49 @@ const IMAGES = [
 
 export default function GalleryShowcase() {
   return (
-    <section className="relative h-full w-full overflow-hidden bg-[#0B1F3F]">
+    <section className="relative w-full overflow-hidden flex flex-col bg-[#0B1F3F]" style={{ height: 'calc(100vh - 80px - 64px)' }}>
       <div className="absolute inset-0 opacity-40">
         <div className="h-full w-full bg-[radial-gradient(circle_at_top,_rgba(70,143,175,0.4),_transparent_55%)]" />
       </div>
 
-      <div className="relative z-10 flex h-full items-center justify-center px-6 py-8 text-white md:px-10 lg:px-16">
-        <div className="flex w-full max-w-6xl flex-col text-center">
-          <header className="flex flex-col items-center text-center space-y-4 md:space-y-6">
-            <p className="text-sm uppercase tracking-[0.32em] text-white/60 md:text-base">
+      {/* Content - flex-1 to fill space, flex layout */}
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-6 text-white md:px-10 lg:px-16">
+        <div className="w-full max-w-6xl flex flex-col h-full justify-center">
+          <header className="mb-6 flex flex-col items-center space-y-2 text-center md:mb-8 md:space-y-3">
+            <p className="text-xs uppercase tracking-[0.32em] text-white/60 md:text-sm">
               Portfolio Preview
             </p>
-            <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+            <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
               Past Work Gallery
             </h1>
-            <p className="max-w-2xl text-center text-base leading-relaxed text-white/80 md:text-lg">
+            <p className="max-w-2xl text-center text-sm leading-relaxed text-white/80 md:text-base">
               A curated look at recent renovations and maintenance clients across greater New Orleans.
               Each project is an expression of our commitment to precision, ambience, and lasting quality.
             </p>
           </header>
 
-          <div className="mt-10 flex-1">
-            <div className="grid h-full grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-              {IMAGES.map((image) => (
-                <figure
-                  key={image.src}
-                  className="group relative h-full min-h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-white/5"
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.title}
-                    fill
-                    sizes="(max-width: 767px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 py-4 text-sm font-medium tracking-wide text-white md:text-base">
-                    {image.title}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+          {/* Compact 3-column grid to fit viewport */}
+          <div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-6">
+            {IMAGES.map((image) => (
+              <figure
+                key={image.src}
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.title}
+                  fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 py-3 text-sm font-semibold tracking-wide text-white">
+                  {image.title}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
-

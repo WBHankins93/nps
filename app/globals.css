@@ -93,9 +93,9 @@
   --font-accent: var(--font-playfair);
 }
 
+/* FIXED: Only reset margin and box-sizing, NOT padding (Tailwind needs to control padding) */
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -119,6 +119,15 @@ body {
 main {
   flex: 1;
   min-height: 0;
+}
+
+/* Mobile: Allow scrolling */
+@media (max-width: 767px) {
+  body {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
 }
 
 /* Desktop: Non-scrollable */
@@ -181,7 +190,9 @@ p + p {
 }
 
 /* Smooth transitions - optimized */
-* {
+*,
+*::before,
+*::after {
   transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 

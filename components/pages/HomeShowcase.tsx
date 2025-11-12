@@ -74,11 +74,11 @@ export default function HomeShowcase() {
             <h1 className="text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_12px_32px_rgba(11,31,63,0.45)] md:text-5xl lg:text-6xl mb-4">
               NOLA Pool Solutions
             </h1>
-            <p className="text-lg font-medium leading-relaxed text-white drop-shadow-lg md:text-xl max-w-3xl mx-auto mb-4">
-              We maintain your pool so perfectly, you'll forget you even have one. Guaranteed crystal-clear water, every week.
+            <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm">
+              Enjoy your pool; leave the work to us.
             </p>
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm">
-              Licensed · Insured · Trusted by 500+ NOLA Families
+              Licensed · Insured · Community Trusted
             </p>
           </div>
         </div>
@@ -107,6 +107,8 @@ export default function HomeShowcase() {
             </Button>
           </div>
         </div>
+
+        
 
         {/* SPACER DIV - REDUCED from h-12 md:h-16 to h-8 md:h-10 */}
         <div className="h-8 md:h-10"></div>

@@ -123,7 +123,7 @@ export default function ServicesSection() {
         {/* Services Grid - Takes remaining space */}
         <div className="flex-1 flex items-center justify-center">
           <div className="w-full max-w-6xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-20 md:mb-28">
               {services.map((service, index) => (
                 <button
                   key={service.title}

@@ -142,9 +142,9 @@ export default function ServicesShowcase() {
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-white/90 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
+                    {/* <p className="text-white/90 text-sm leading-relaxed">
+                      service.description
+                    </p> */}
                   </div>
                 </div>
               </button>

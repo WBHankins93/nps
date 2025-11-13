@@ -125,24 +125,25 @@ main {
 @media (max-width: 767px) {
   body {
     overflow-y: auto;
+    overflow-x: hidden;
     height: auto;
     min-height: 100vh;
   }
 }
 
-/* Desktop: Non-scrollable */
+/* Desktop: Allow scrolling when content exceeds viewport */
 @media (min-width: 768px) {
-  body {
-    overflow: hidden;
-    height: 100vh;
-  }
-}
-
-/* Mobile: Scrollable */
-@media (max-width: 767px) {
   body {
     overflow-y: auto;
     overflow-x: hidden;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  /* Showcase sections: min-height to fill viewport, but can grow */
+  .showcase-section {
+    min-height: calc(100vh - 80px - 64px) !important;
+    height: auto !important;
   }
 }
 

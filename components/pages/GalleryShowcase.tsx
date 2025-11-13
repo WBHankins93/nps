@@ -29,14 +29,17 @@ const IMAGES = [
 
 export default function GalleryShowcase() {
   return (
-    <section className="relative w-full overflow-hidden flex flex-col bg-[#0B1F3F]" style={{ height: 'calc(100vh - 80px - 64px)' }}>
-      <div className="absolute inset-0 opacity-40">
-        <div className="h-full w-full bg-[radial-gradient(circle_at_top,_rgba(70,143,175,0.4),_transparent_55%)]" />
+    <section className="relative w-full flex flex-col bg-[#0B1F3F] showcase-section" style={{ 
+      height: 'auto',
+      minHeight: 'calc(100vh - 80px - 64px)'
+    }}>
+      <div className="absolute inset-0 min-h-full opacity-40">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(70,143,175,0.4),_transparent_55%)]" />
       </div>
 
       {/* Content - flex-1 to fill space, flex layout */}
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-6 text-white md:px-10 lg:px-16">
-        <div className="w-full max-w-6xl flex flex-col h-full justify-center">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-start md:justify-center px-6 py-8 pb-20 text-white md:px-10 md:py-6 md:pb-6 lg:px-16">
+        <div className="w-full max-w-6xl flex flex-col md:h-full md:justify-center">
           <header className="mb-6 flex flex-col items-center space-y-2 text-center md:mb-8 md:space-y-3">
             <p className="text-xs uppercase tracking-[0.32em] text-white/60 md:text-sm">
               Portfolio Preview

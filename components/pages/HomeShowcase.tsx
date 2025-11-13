@@ -42,10 +42,13 @@ export default function HomeShowcase() {
   }, [testimonials.length]);
 
   return (
-    <section className="relative w-full overflow-hidden flex flex-col" style={{ height: 'calc(100vh - 80px - 64px)' }}>
+    <section className="relative w-full flex flex-col showcase-section" style={{ 
+      height: 'auto',
+      minHeight: 'calc(100vh - 80px - 64px)'
+    }}>
       {/* Background Image */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 min-h-full"
         style={{
           backgroundImage: 'url(/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg)',
           backgroundSize: 'cover',
@@ -55,7 +58,7 @@ export default function HomeShowcase() {
 
       {/* Gradient Overlay */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 min-h-full"
         style={{
           background:
             "linear-gradient(135deg, rgba(11, 31, 63, 0.78) 0%, rgba(27, 90, 125, 0.58) 45%, rgba(70, 143, 175, 0.62) 100%)",
@@ -63,7 +66,7 @@ export default function HomeShowcase() {
       />
 
       {/* Content - flex-1 to fill space */}
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-6 md:px-10 lg:px-16">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-8 md:px-10 md:py-6 lg:px-16">
         
         {/* Main Content - REDUCED PADDING - was p-8 md:p-10, now p-4 md:p-6 */}
         <div className="flex w-full max-w-5xl flex-col items-center text-center">

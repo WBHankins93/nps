@@ -2,9 +2,12 @@ import Button from "@/components/Button";
 
 export default function ContactShowcase() {
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 80px - 64px)' }}>
+    <section className="relative w-full showcase-section" style={{ 
+      height: 'auto',
+      minHeight: 'calc(100vh - 80px - 64px)'
+    }}>
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 min-h-full"
         style={{
           backgroundImage:
             "linear-gradient(135deg, rgba(11,31,63,0.88) 0%, rgba(27,90,125,0.7) 50%, rgba(70,143,175,0.65) 100%), url(/artem-militonian-UYW6FZLlnL8-unsplash.jpg)",
@@ -12,9 +15,9 @@ export default function ContactShowcase() {
           backgroundPosition: "center",
         }}
       />
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 min-h-full bg-black/20" />
 
-      <div className="relative z-10 flex h-full items-start justify-center px-6 py-4 pb-20 text-white md:px-10 md:py-6 md:pb-24 lg:px-16 lg:pb-28">
+      <div className="relative z-10 flex min-h-full items-start justify-center px-6 py-8 pb-32 text-white md:px-10 md:py-6 md:pb-24 lg:px-16 lg:pb-28 md:h-full">
         <div className="w-full max-w-7xl">
           <header className="mb-4 flex flex-col items-center space-y-1 text-center md:mb-6 md:space-y-2">
             <p className="text-xs uppercase tracking-[0.32em] text-white/60">

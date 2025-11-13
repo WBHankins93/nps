@@ -68,10 +68,13 @@ export default function ServicesShowcase() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 80px - 64px)' }}>
+    <section className="relative w-full showcase-section" style={{ 
+      height: 'auto',
+      minHeight: 'calc(100vh - 80px - 64px)'
+    }}>
       {/* Background */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-40 min-h-full"
         style={{
           backgroundImage: 'url(/services-background.jpg)',
           backgroundSize: 'cover',
@@ -81,17 +84,17 @@ export default function ServicesShowcase() {
       
       {/* Gradient overlay */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 min-h-full"
         style={{
-          background: 'linear-gradient(135deg, rgba(248,251,255,0.88) 0%, rgba(255,255,255,0.85) 50%, rgba(232,244,248,0.88) 100%)',
+          background: 'linear-gradient(135deg, rgba(248,251,255,0.80) 0%, rgba(255,255,255,0.75) 50%, rgba(232,244,248,0.80) 100%)',
         }}
       />
       
       {/* Content - NO padding top/bottom to eliminate purple space */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 md:px-10 lg:px-16">
+      <div className="relative z-10 flex min-h-full flex-col items-center justify-center px-6 py-8 md:px-10 md:py-0 lg:px-16 md:h-full">
         
         {/* Header - Compact */}
-        <div className="text-center mb-4">
+        <div className="text-center mb-4 md:mb-4">
           <p className="text-cerulean text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-1">
             NOLA Pool Solutions
           </p>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from "next/link";
+import { getBlobUrl } from "@/lib/blob-config";
 
 export default function ServicesShowcase() {
   const [selectedService, setSelectedService] = useState<number | null>(null);
@@ -23,7 +24,7 @@ export default function ServicesShowcase() {
         'Equipment inspection',
         'Detailed service reports'
       ],
-      imageUrl: '/pool-maintenance.jpg',
+      imageUrl: getBlobUrl('/pool-maintenance.jpg'),
       placeholderBg: 'bg-gradient-to-br from-cerulean to-ocean',
     },
     {
@@ -43,7 +44,7 @@ export default function ServicesShowcase() {
         'Salt system maintenance',
         'Emergency repair services'
       ],
-      imageUrl: '/equipment-repair.jpg',
+      imageUrl: getBlobUrl('/equipment-repair.jpg'),
       placeholderBg: 'bg-gradient-to-br from-ocean to-midnight',
     },
     {
@@ -62,7 +63,7 @@ export default function ServicesShowcase() {
         'Water feature additions',
         'Energy-efficient upgrades'
       ],
-      imageUrl: '/pool-renovation.jpg',
+      imageUrl: getBlobUrl('/pool-renovation.jpg'),
       placeholderBg: 'bg-gradient-to-br from-cerulean to-navy',
     },
   ];
@@ -76,7 +77,7 @@ export default function ServicesShowcase() {
       <div
         className="absolute inset-0 opacity-40 min-h-full"
         style={{
-          backgroundImage: 'url(/services-background.jpg)',
+          backgroundImage: `url(${getBlobUrl('/services-background.jpg')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -124,6 +125,7 @@ export default function ServicesShowcase() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}
+                  aria-label={`${service.title} service in New Orleans by NOLA Pool Solutions`}
                 />
                 
                 {/* Overlay */}

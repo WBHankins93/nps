@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Button from '../Button';
+import { getBlobUrl } from '@/lib/blob-config';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -45,7 +46,7 @@ export default function ContactSection() {
       <div 
         className="absolute inset-0 opacity-[0.15]"
         style={{
-          backgroundImage: 'url(/artem-militonian-UYW6FZLlnL8-unsplash.jpg)',
+          backgroundImage: `url(${getBlobUrl('/artem-militonian-UYW6FZLlnL8-unsplash.jpg')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -242,13 +243,9 @@ export default function ContactSection() {
                 variant="outline"
                 size="lg"
                 className="w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-[#1B5A7D]"
-                href="#"
+                href={process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || "https://www.google.com/maps/search/?api=1&query=NOLA+Pool+Solutions+New+Orleans"}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => {
-                  e?.preventDefault();
-                  alert('Google Reviews link will be added here. Please provide your Google Business profile review URL.');
-                }}
               >
                 Write a Review
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Button from "@/components/Button";
+import { getBlobUrl } from "@/lib/blob-config";
 
 export default function HomeShowcase() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -50,7 +51,7 @@ export default function HomeShowcase() {
       <div
         className="absolute inset-0 min-h-full"
         style={{
-          backgroundImage: 'url(/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg)',
+          backgroundImage: `url(${getBlobUrl('/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -69,19 +70,22 @@ export default function HomeShowcase() {
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-8 md:px-10 md:py-6 lg:px-16">
         
         {/* Main Content - REDUCED PADDING - was p-8 md:p-10, now p-4 md:p-6 */}
-        <div className="flex w-full max-w-5xl flex-col items-center text-center">
-          <div className="p-4 md:p-6">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/90 md:text-sm drop-shadow-lg mb-3">
+        <div className="flex w-full max-w-5xl flex-col items-center text-center mx-auto">
+          <div className="p-4 md:p-6 w-full flex flex-col items-center">
+            <p className="text-xs uppercase tracking-[0.35em] text-white/90 md:text-sm drop-shadow-lg mb-3 text-center">
               Premium Pool Care | New Orleans
             </p>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_12px_32px_rgba(11,31,63,0.45)] md:text-5xl lg:text-6xl mb-4">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_12px_32px_rgba(11,31,63,0.45)] md:text-5xl lg:text-6xl mb-4 text-center">
               NOLA Pool Solutions
             </h1>
-            <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm">
+            <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm text-center">
               Enjoy your pool; leave the work to us.
             </p>
-            <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm">
+            <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm text-center">
               Licensed · Insured · Community Trusted
+            </p>
+            <p className="text-sm text-white/90 mt-4 max-w-2xl leading-relaxed md:text-base text-center w-full">
+              Professional pool maintenance, repair, and renovation services serving Greater New Orleans, Metairie, Kenner, Uptown, Westbank, and the Northshore. Trusted by homeowners across Louisiana for reliable pool care.
             </p>
           </div>
         </div>

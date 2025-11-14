@@ -1,33 +1,37 @@
 import Image from "next/image";
+import { getBlobUrl } from "@/lib/blob-config";
 
-const IMAGES = [
+const getImages = () => [
   {
-    src: "/adonyi-gabor-DfSDlvCZz40-unsplash.jpg",
+    src: getBlobUrl("/adonyi-gabor-DfSDlvCZz40-unsplash.jpg"),
     title: "Resort-inspired geometry",
   },
   {
-    src: "/artem-militonian-UYW6FZLlnL8-unsplash.jpg",
+    src: getBlobUrl("/artem-militonian-UYW6FZLlnL8-unsplash.jpg"),
     title: "Evening ambience lighting",
   },
   {
-    src: "/jubeo-hernandez-ZmWLGkPe1Sg-unsplash.jpg",
+    src: getBlobUrl("/jubeo-hernandez-ZmWLGkPe1Sg-unsplash.jpg"),
     title: "Cascading water features",
   },
   {
-    src: "/tim-bermudez-sIiyCDSbDpE-unsplash.jpg",
+    src: getBlobUrl("/tim-bermudez-sIiyCDSbDpE-unsplash.jpg"),
     title: "Infinity edge redesign",
   },
   {
-    src: "/adheesha-paranagama-kOYh8C_xLUQ-unsplash.jpg",
+    src: getBlobUrl("/adheesha-paranagama-kOYh8C_xLUQ-unsplash.jpg"),
     title: "Sleek modern refinish",
   },
   {
-    src: "/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg",
+    src: getBlobUrl("/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg"),
     title: "Luxury residential oasis",
   },
-] as const;
+];
+
 
 export default function GalleryShowcase() {
+  const images = getImages();
+  
   return (
     <section className="relative w-full flex flex-col bg-[#0B1F3F] showcase-section" style={{ 
       height: 'auto',
@@ -55,14 +59,14 @@ export default function GalleryShowcase() {
 
           {/* Compact 3-column grid to fit viewport */}
           <div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-6">
-            {IMAGES.map((image) => (
+            {images.map((image) => (
               <figure
                 key={image.src}
                 className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
               >
                 <Image
                   src={image.src}
-                  alt={image.title}
+                  alt={`${image.title} - Pool renovation project by NOLA Pool Solutions in New Orleans`}
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"

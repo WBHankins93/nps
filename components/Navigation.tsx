@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { getBlobUrl } from "@/lib/blob-config";
 
 const NAV_ITEMS = [
   { href: '/', label: 'Home' },
@@ -53,7 +54,7 @@ export default function Navigation() {
         >
           <span className="relative block h-12 w-28 pr-1 md:h-14 md:w-32 md:pr-2 lg:h-16 lg:w-36 lg:pr-3">
             <Image
-              src="/logo.png"
+              src={getBlobUrl("/logo.png")}
               alt="NOLA Pool Solutions logo"
               fill
               priority

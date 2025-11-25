@@ -108,6 +108,28 @@ export default function ServicesShowcase() {
           </p>
         </div>
 
+        {/* See Us In Action Video Section */}
+        <div className="w-full max-w-5xl mb-8 md:mb-10">
+          <div className="text-center mb-4">
+            <h2 className="text-xl md:text-2xl font-bold text-midnight mb-2">
+              See Us In Action
+            </h2>
+            <p className="text-sm md:text-base text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+              A complete walkthrough of our maintenance, equipment service, and cleanup process
+            </p>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-midnight aspect-video">
+            <video
+              src={getBlobUrl('/nps-cleaning.MP4')}
+              controls
+              className="w-full h-full object-cover"
+              preload="metadata"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
         {/* Services Grid - MINIMAL bottom margin */}
         <div className="w-full max-w-5xl mb-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">

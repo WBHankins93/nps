@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "upload-assets": "tsx scripts/upload-to-blob.ts"
+    "upload-assets": "tsx scripts/upload-to-blob.ts",
+    "upload-to-supabase": "tsx scripts/convert-and-upload-to-supabase.ts",
+    "upload-existing-to-supabase": "tsx scripts/upload-existing-assets-to-supabase.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.84.0",
     "@vercel/blob": "^2.0.0",
     "lucide-react": "^0.553.0",
     "next": "16.0.1",

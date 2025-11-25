@@ -40,7 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# public assets (now stored in Vercel Blob Storage)
+# public assets (now stored in Supabase Storage)
 /public/*.jpg
 /public/*.jpeg
 /public/*.png
@@ -50,4 +50,8 @@ next-env.d.ts
 /public/*.mov
 /public/*.avi
 /public/*.MP4
+/public/*.HEIC
+/public/*.heic
+/public/nps-images/
 !/public/.gitkeep
+!/public/logo.png

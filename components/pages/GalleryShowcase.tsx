@@ -2,40 +2,7 @@
 
 import Image from "next/image";
 import { getSupabaseAssetUrl } from "@/lib/supabase-assets";
-import { useRef, useEffect } from "react";
-
-const getGalleryItems = () => [
-  {
-    type: 'image' as const,
-    src: getSupabaseAssetUrl('IMG_0108.jpg'),
-    title: "Professional pool maintenance",
-  },
-  {
-    type: 'image' as const,
-    src: getSupabaseAssetUrl('IMG_0443.jpg'),
-    title: "Expert equipment service",
-  },
-  {
-    type: 'image' as const,
-    src: getSupabaseAssetUrl('IMG_2109.jpg'),
-    title: "Quality pool renovation",
-  },
-  {
-    type: 'image' as const,
-    src: getSupabaseAssetUrl('IMG_2911.jpg'),
-    title: "Precision pool care",
-  },
-  {
-    type: 'image' as const,
-    src: getSupabaseAssetUrl('IMG_2988.jpg'),
-    title: "Complete pool solutions",
-  },
-  {
-    type: 'video' as const,
-    src: getSupabaseAssetUrl('IMG_2837.mp4'),
-    title: "Our work in action",
-  },
-];
+import { useRef, useEffect, useMemo } from "react";
 
 
 function VideoItem({ src, title }: { src: string; title: string }) {
@@ -80,7 +47,38 @@ function VideoItem({ src, title }: { src: string; title: string }) {
 }
 
 export default function GalleryShowcase() {
-  const items = getGalleryItems();
+  const items = useMemo(() => [
+    {
+      type: 'image' as const,
+      src: getSupabaseAssetUrl('IMG_0108.jpg'),
+      title: "Professional pool maintenance",
+    },
+    {
+      type: 'image' as const,
+      src: getSupabaseAssetUrl('IMG_0443.jpg'),
+      title: "Expert equipment service",
+    },
+    {
+      type: 'image' as const,
+      src: getSupabaseAssetUrl('IMG_2109.jpg'),
+      title: "Quality pool renovation",
+    },
+    {
+      type: 'image' as const,
+      src: getSupabaseAssetUrl('IMG_2911.jpg'),
+      title: "Precision pool care",
+    },
+    {
+      type: 'image' as const,
+      src: getSupabaseAssetUrl('IMG_2988.jpg'),
+      title: "Complete pool solutions",
+    },
+    {
+      type: 'video' as const,
+      src: getSupabaseAssetUrl('IMG_2837.mp4'),
+      title: "Our work in action",
+    },
+  ], []);
   
   return (
     <section className="relative w-full flex flex-col bg-[#0B1F3F] showcase-section" style={{ 
@@ -109,8 +107,13 @@ export default function GalleryShowcase() {
 
           {/* Compact 3-column grid to fit viewport */}
           <div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-6">
-            {items.map((item, index) => (
-              item.type === 'video' ? (
+            {items.map((item, index) => {
+              if (!item.src) {
+                console.warn(`Missing URL for gallery item: ${item.title}`);
+                return null;
+              }
+              
+              return item.type === 'video' ? (
                 <VideoItem key={`${item.src}-${index}`} src={item.src} title={item.title} />
               ) : (
                 <figure
@@ -123,13 +126,14 @@ export default function GalleryShowcase() {
                     fill
                     sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    unoptimized={item.src.includes('supabase.co')}
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 py-3 text-sm font-semibold tracking-wide text-white">
                     {item.title}
                   </figcaption>
                 </figure>
-              )
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

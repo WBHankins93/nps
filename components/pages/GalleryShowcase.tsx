@@ -1,7 +1,6 @@
 'use client';
 
 import Image from "next/image";
-import { getSupabaseAssetUrl } from "@/lib/supabase-assets";
 import { useRef, useEffect, useMemo } from "react";
 
 
@@ -50,32 +49,32 @@ export default function GalleryShowcase() {
   const items = useMemo(() => [
     {
       type: 'image' as const,
-      src: getSupabaseAssetUrl('IMG_0108.jpg'),
+      src: '/nps-images/IMG_0108.jpg',
       title: "Professional pool maintenance",
     },
     {
       type: 'image' as const,
-      src: getSupabaseAssetUrl('IMG_0443.jpg'),
+      src: '/nps-images/IMG_0443.jpg',
       title: "Expert equipment service",
     },
     {
       type: 'image' as const,
-      src: getSupabaseAssetUrl('IMG_2109.jpg'),
+      src: '/nps-images/IMG_2109.jpg',
       title: "Quality pool renovation",
     },
     {
       type: 'image' as const,
-      src: getSupabaseAssetUrl('IMG_2911.jpg'),
+      src: '/nps-images/IMG_2911.jpg',
       title: "Precision pool care",
     },
     {
       type: 'image' as const,
-      src: getSupabaseAssetUrl('IMG_2988.jpg'),
+      src: '/nps-images/IMG_2988.jpg',
       title: "Complete pool solutions",
     },
     {
       type: 'video' as const,
-      src: getSupabaseAssetUrl('IMG_2837.mp4'),
+      src: '/nps-images/IMG_2837.mp4',
       title: "Our work in action",
     },
   ], []);
@@ -126,7 +125,6 @@ export default function GalleryShowcase() {
                     fill
                     sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    unoptimized={item.src.includes('supabase.co')}
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 py-3 text-sm font-semibold tracking-wide text-white">
                     {item.title}

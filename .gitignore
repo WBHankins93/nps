@@ -40,18 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# public assets (now stored in Supabase Storage)
-/public/*.jpg
-/public/*.jpeg
-/public/*.png
-/public/*.gif
-/public/*.webp
-/public/*.mp4
-/public/*.mov
-/public/*.avi
-/public/*.MP4
-/public/*.HEIC
-/public/*.heic
-/public/nps-images/
-!/public/.gitkeep
-!/public/logo.png
+# public assets - keeping them in repo for simplicity
+# (removed exclusions to allow committing assets)

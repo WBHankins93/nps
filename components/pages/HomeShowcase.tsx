@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Button from "@/components/Button";
-import { getBlobUrl } from "@/lib/blob-config";
 
 export default function HomeShowcase() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -51,7 +50,7 @@ export default function HomeShowcase() {
       <div
         className="absolute inset-0 min-h-full"
         style={{
-          backgroundImage: `url(${getBlobUrl('/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg')})`,
+          backgroundImage: `url('/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

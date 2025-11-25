@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Button from '../Button';
-import { getBlobUrl } from '@/lib/blob-config';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -46,7 +45,7 @@ export default function ContactSection() {
       <div 
         className="absolute inset-0 opacity-[0.15]"
         style={{
-          backgroundImage: `url(${getBlobUrl('/artem-militonian-UYW6FZLlnL8-unsplash.jpg')})`,
+          backgroundImage: `url('/artem-militonian-UYW6FZLlnL8-unsplash.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

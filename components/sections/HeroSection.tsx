@@ -1,7 +1,6 @@
 'use client';
 
 import Button from '../Button';
-import { getBlobUrl } from '@/lib/blob-config';
 
 interface HeroSectionProps {
   onNavigateToContact: () => void;
@@ -14,7 +13,7 @@ export default function HeroSection({ onNavigateToContact }: HeroSectionProps) {
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${getBlobUrl('/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg')})`,
+          backgroundImage: `url('/zhiqiang-wang-uWB32BEOnuw-unsplash.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

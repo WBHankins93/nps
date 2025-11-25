@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from "next/link";
-import { getBlobUrl } from "@/lib/blob-config";
 
 export default function ServicesShowcase() {
   const [selectedService, setSelectedService] = useState<number | null>(null);
@@ -24,7 +23,7 @@ export default function ServicesShowcase() {
         'Equipment inspection',
         'Detailed service reports'
       ],
-      imageUrl: getBlobUrl('/pool-maintenance.jpg'),
+      imageUrl: '/pool-maintenance.jpg',
       placeholderBg: 'bg-gradient-to-br from-cerulean to-ocean',
     },
     {
@@ -44,7 +43,7 @@ export default function ServicesShowcase() {
         'Salt system maintenance',
         'Emergency repair services'
       ],
-      imageUrl: getBlobUrl('/equipment-repair.jpg'),
+      imageUrl: '/equipment-repair.jpg',
       placeholderBg: 'bg-gradient-to-br from-ocean to-midnight',
     },
     {
@@ -63,7 +62,7 @@ export default function ServicesShowcase() {
         'Water feature additions',
         'Energy-efficient upgrades'
       ],
-      imageUrl: getBlobUrl('/pool-renovation.jpg'),
+      imageUrl: '/pool-renovation.jpg',
       placeholderBg: 'bg-gradient-to-br from-cerulean to-navy',
     },
   ];
@@ -77,7 +76,7 @@ export default function ServicesShowcase() {
       <div
         className="absolute inset-0 opacity-40 min-h-full"
         style={{
-          backgroundImage: `url(${getBlobUrl('/services-background.jpg')})`,
+          backgroundImage: `url('/services-background.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -120,7 +119,7 @@ export default function ServicesShowcase() {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-midnight aspect-video">
             <video
-              src={getBlobUrl('/nps-cleaning.MP4')}
+              src="/nps-cleaning.MP4"
               controls
               className="w-full h-full object-cover"
               preload="metadata"

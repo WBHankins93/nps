@@ -1,5 +1,4 @@
 import Button from "@/components/Button";
-import { getBlobUrl } from "@/lib/blob-config";
 
 export default function ContactShowcase() {
   return (
@@ -11,7 +10,7 @@ export default function ContactShowcase() {
         className="absolute inset-0 min-h-full"
         style={{
           backgroundImage:
-            `linear-gradient(135deg, rgba(11,31,63,0.88) 0%, rgba(27,90,125,0.7) 50%, rgba(70,143,175,0.65) 100%), url(${getBlobUrl('/artem-militonian-UYW6FZLlnL8-unsplash.jpg')})`,
+            `linear-gradient(135deg, rgba(11,31,63,0.88) 0%, rgba(27,90,125,0.7) 50%, rgba(70,143,175,0.65) 100%), url('/artem-militonian-UYW6FZLlnL8-unsplash.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

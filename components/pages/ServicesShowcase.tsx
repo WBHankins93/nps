@@ -116,7 +116,7 @@ export default function ServicesShowcase() {
         </div>
 
         {/* Services Grid */}
-        <div className="w-full max-w-5xl mb-16 md:mb-20">
+        <div className="w-full max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
             {services.map((service, index) => (
               <button
@@ -164,15 +164,20 @@ export default function ServicesShowcase() {
           </div>
         </div>
 
-        {/* See Us In Action Video Section - Below Services Cards */}
-        <div className="w-full max-w-4xl mx-auto mb-16 md:mb-20 px-4 md:px-0">
+        {/* SPACER DIV between services and video */}
+        <div className="h-12 md:h-16"></div>
+
+        {/* See Us In Action Video Section - In its own container */}
+        <div className="w-full max-w-4xl mx-auto">
           <div className="text-center mb-6 md:mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-midnight mb-2">
               See Us In Action
             </h2>
-            <p className="text-sm md:text-base text-[var(--color-text-secondary)] max-w-2xl mx-auto text-center">
-              A complete walkthrough of our maintenance, equipment service, and cleanup process
-            </p>
+            <div className="flex justify-center">
+              <p className="text-sm md:text-base text-[var(--color-text-secondary)] max-w-2xl text-center">
+                A complete walkthrough of our maintenance, equipment service, and cleanup process
+              </p>
+            </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-midnight aspect-video w-full">
             <video
@@ -191,8 +196,11 @@ export default function ServicesShowcase() {
           </div>
         </div>
 
+        {/* SPACER DIV between video and CTA */}
+        <div className="h-12 md:h-16"></div>
+
         {/* Quote-Only CTA - Compact with enhanced button */}
-        <div className="relative rounded-2xl overflow-hidden shadow-xl w-full max-w-5xl mt-8 md:mt-12">
+        <div className="relative rounded-2xl overflow-hidden shadow-xl w-full max-w-5xl">
           <div className="absolute inset-0 bg-gradient-to-r from-ocean to-cerulean" />
           <div className="relative z-10 flex flex-col items-center px-6 py-6 md:px-8 md:py-8 text-white">
             <h3 className="text-xl md:text-2xl font-bold mb-2">

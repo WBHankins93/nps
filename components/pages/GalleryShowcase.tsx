@@ -50,32 +50,32 @@ export default function GalleryShowcase() {
     {
       type: 'image' as const,
       src: '/nps-images/IMG_0108.jpg',
-      title: "Professional pool maintenance",
+      title: "Professional Pool Maintenance",
     },
     {
       type: 'image' as const,
       src: '/nps-images/IMG_0443.jpg',
-      title: "Expert equipment service",
+      title: "Expert Equipment Service",
     },
     {
       type: 'image' as const,
       src: '/nps-images/IMG_2109.jpg',
-      title: "Quality pool renovation",
+      title: "Quality Pool Renovation",
     },
     {
       type: 'image' as const,
       src: '/nps-images/IMG_2911.jpg',
-      title: "Precision pool care",
+      title: "Precision Pool Care",
     },
     {
       type: 'image' as const,
       src: '/nps-images/IMG_2988.jpg',
-      title: "Complete pool solutions",
+      title: "Complete Pool Solutions",
     },
     {
       type: 'video' as const,
       src: '/nps-images/IMG_2837.mp4',
-      title: "Our work in action",
+      title: "Our Work In Action",
     },
   ], []);
   

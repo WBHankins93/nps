@@ -1,10 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from "next/link";
 
 export default function ServicesShowcase() {
   const [selectedService, setSelectedService] = useState<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Slightly slow down video playback if needed
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.9; // 90% speed (slightly slower)
+    }
+  }, []);
 
   const services = [
     {
@@ -108,7 +116,7 @@ export default function ServicesShowcase() {
         </div>
 
         {/* Services Grid */}
-        <div className="w-full max-w-5xl mb-12 md:mb-16">
+        <div className="w-full max-w-5xl mb-16 md:mb-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
             {services.map((service, index) => (
               <button
@@ -157,17 +165,18 @@ export default function ServicesShowcase() {
         </div>
 
         {/* See Us In Action Video Section - Below Services Cards */}
-        <div className="w-full max-w-5xl mb-12 md:mb-16">
+        <div className="w-full max-w-4xl mx-auto mb-16 md:mb-20 px-4 md:px-0">
           <div className="text-center mb-6 md:mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-midnight mb-2">
               See Us In Action
             </h2>
-            <p className="text-sm md:text-base text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-[var(--color-text-secondary)] max-w-2xl mx-auto text-center">
               A complete walkthrough of our maintenance, equipment service, and cleanup process
             </p>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-midnight aspect-video">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-midnight aspect-video w-full">
             <video
+              ref={videoRef}
               src="/nps-cleaning.MP4"
               autoPlay
               loop
@@ -175,6 +184,7 @@ export default function ServicesShowcase() {
               playsInline
               className="w-full h-full object-cover"
               preload="auto"
+              style={{ maxWidth: '100%', height: 'auto' }}
             >
               Your browser does not support the video tag.
             </video>
@@ -182,7 +192,7 @@ export default function ServicesShowcase() {
         </div>
 
         {/* Quote-Only CTA - Compact with enhanced button */}
-        <div className="relative rounded-2xl overflow-hidden shadow-xl w-full max-w-5xl">
+        <div className="relative rounded-2xl overflow-hidden shadow-xl w-full max-w-5xl mt-8 md:mt-12">
           <div className="absolute inset-0 bg-gradient-to-r from-ocean to-cerulean" />
           <div className="relative z-10 flex flex-col items-center px-6 py-6 md:px-8 md:py-8 text-white">
             <h3 className="text-xl md:text-2xl font-bold mb-2">

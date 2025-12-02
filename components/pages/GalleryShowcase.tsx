@@ -53,7 +53,7 @@ interface GalleryItem {
 
 function AutoCarousel({ items, direction = 'left', speed = 1 }: { items: GalleryItem[]; direction?: 'left' | 'right'; speed?: number }) {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const scrollPositionRef = useRef(0);
   const firstSetWidthRef = useRef(0);
 

@@ -13,6 +13,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   target?: string;
   rel?: string;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -25,6 +26,7 @@ export default function Button({
   type = 'button',
   target,
   rel,
+  disabled = false,
 }: ButtonProps) {
   const baseStyles = 'font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2 relative overflow-hidden group';
 
@@ -62,7 +64,8 @@ export default function Button({
     }
   };
 
-  const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : '';
+  const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${disabledStyles} ${className}`;
 
   // Shimmer effect overlay for primary and secondary buttons
   const shimmerOverlay = (variant === 'primary' || variant === 'secondary') && (
@@ -141,7 +144,7 @@ export default function Button({
 
   return (
     <>
-      <button type={type} onClick={onClick} className={classes} style={styles}>
+      <button type={type} onClick={onClick} className={classes} style={styles} disabled={disabled}>
         {sharedContent}
       </button>
       <style jsx>{`

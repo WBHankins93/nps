@@ -57,7 +57,6 @@ export default function ContactSection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
             Get In Touch
           </h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#D4AF6E] to-transparent mx-auto mb-8 md:mb-10"></div>
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto font-light leading-relaxed px-4">
             Ready to experience premier pool service? Contact us today for a free quote!
           </p>
@@ -119,7 +118,7 @@ export default function ContactSection() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
-                  placeholder="(504) 555-0123"
+                  placeholder="(504) 450-3496"
                 />
               </div>
 
@@ -193,7 +192,7 @@ export default function ContactSection() {
                 </a>
 
                 <a
-                  href="tel:+15045550123"
+                  href="tel:15044503496"
                   className="flex items-center gap-4 md:gap-5 text-white hover:text-[#D4AF6E] transition-colors group"
                 >
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#B8956A] to-[#D4AF6E] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg">
@@ -203,7 +202,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-semibold text-sm mb-1">Phone</p>
-                    <p className="text-white/90 text-sm md:text-base">(504) 555-0123</p>
+                    <p className="text-white/90 text-sm md:text-base">(504) 450-3496</p>
                   </div>
                 </a>
               </div>

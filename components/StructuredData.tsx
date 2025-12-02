@@ -14,14 +14,14 @@ export default function StructuredData() {
     "image": `${siteUrl}/logo.png`,
     "logo": `${siteUrl}/logo.png`,
     "url": siteUrl,
-    "telephone": "(504) 555-1234",
+    "telephone": "(504) 450-3496",
     "email": "nolapoolsolutions@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "New Orleans",
       "addressRegion": "LA",
       "addressCountry": "US",
-      "addressArea": "Greater New Orleans & Northshore"
+      "addressArea": "Greater New Orleans Area"
     },
     "geo": {
       "@type": "GeoCoordinates",
@@ -133,7 +133,7 @@ export default function StructuredData() {
     "logo": `${siteUrl}/logo.png`,
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "(504) 555-1234",
+      "telephone": "(504) 450-3496",
       "contactType": "Customer Service",
       "email": "nolapoolsolutions@gmail.com",
       "areaServed": "US",

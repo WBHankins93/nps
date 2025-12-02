@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     default: "NOLA Pool Solutions | Premium Pool Services in New Orleans",
     template: "%s | NOLA Pool Solutions"
   },
-  description: "Expert pool maintenance, equipment repair, and renovation services in New Orleans. Licensed, insured, and community-trusted pool care for residential and commercial clients. Serving Greater New Orleans & Northshore.",
+  description: "Expert pool maintenance, equipment repair, and renovation services in New Orleans. Licensed, insured, and community-trusted pool care for residential and commercial clients. Serving Greater New Orleans Area.",
   keywords: [
     "pool service New Orleans",
     "pool maintenance NOLA",

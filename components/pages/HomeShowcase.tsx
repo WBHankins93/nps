@@ -84,7 +84,7 @@ export default function HomeShowcase() {
               Licensed · Insured · Community Trusted
             </p>
             <p className="text-sm text-white/90 mt-4 max-w-2xl leading-relaxed md:text-base text-center w-full">
-              Professional pool maintenance, repair, and renovation services serving Greater New Orleans, Metairie, Kenner, Uptown, Westbank, and the Northshore. Trusted by homeowners across Louisiana for reliable pool care.
+              Professional pool maintenance, repair, and renovation services serving Greater New Orleans, Metairie, Kenner, Uptown, and Westbank. Trusted by homeowners across Louisiana for reliable pool care.
             </p>
           </div>
         </div>

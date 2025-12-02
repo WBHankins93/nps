@@ -4,7 +4,7 @@ import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
   title: "Contact Us | Get Your Free Pool Service Quote in New Orleans",
-  description: "Contact NOLA Pool Solutions for pool maintenance, repair, or renovation services. Serving Greater New Orleans & Northshore. Call (504) 555-1234 or email nolapoolsolutions@gmail.com. Free consultations available.",
+  description: "Contact NOLA Pool Solutions for pool maintenance, repair, or renovation services. Serving Greater New Orleans Area. Call (504) 450-3496 or email nolapoolsolutions@gmail.com. Free consultations available.",
   keywords: [
     "pool service contact New Orleans",
     "pool maintenance quote",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Contact Us | Get Your Free Pool Service Quote in New Orleans",
-    description: "Contact NOLA Pool Solutions for pool services. Serving Greater New Orleans & Northshore. Free consultations available.",
+    description: "Contact NOLA Pool Solutions for pool services. Serving Greater New Orleans Area. Free consultations available.",
     type: "website",
   },
 };

@@ -10,7 +10,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "What areas do you serve in New Orleans?",
-    answer: "We serve Greater New Orleans and the Northshore, including Metairie, Kenner, Uptown, Garden District, Lakeview, Covington, Mandeville, and surrounding areas."
+    answer: "We serve Greater New Orleans, including Metairie, Kenner, Uptown, Garden District, Lakeview, and surrounding areas."
   },
   {
     question: "How often should I have my pool serviced?",
@@ -30,7 +30,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "How do I get a quote for pool services?",
-    answer: "You can contact us through our contact form, call us at (504) 555-1234, or email nolapoolsolutions@gmail.com. We provide free consultations and transparent pricing for all services."
+    answer: "You can contact us through our contact form, call us at (504) 450-3496, or email nolapoolsolutions@gmail.com. We provide free consultations and transparent pricing for all services."
   }
 ];
 

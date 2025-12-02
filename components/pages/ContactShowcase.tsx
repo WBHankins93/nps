@@ -1,6 +1,89 @@
+'use client';
+
+import { useState } from 'react';
 import Button from "@/components/Button";
+import ConfirmationModal from "@/components/ConfirmationModal";
 
 export default function ContactShowcase() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    setError(null); // Clear error when user types
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    // Validate required fields
+    if (!formData.name || !formData.email) {
+      setError('Name and email are required');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // Check if response is JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        console.error('Non-JSON response:', text);
+        throw new Error('Server error: Please check your RESEND_API_KEY configuration');
+      }
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const errorMessage = data.details 
+          ? `${data.error}: ${data.details}` 
+          : data.error || 'Failed to submit form';
+        throw new Error(errorMessage);
+      }
+
+      // Show success modal
+      setShowModal(true);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
+      });
+    } catch (err) {
+      console.error('Form submission error:', err);
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="relative w-full showcase-section" style={{ 
       height: 'auto',
@@ -47,10 +130,10 @@ export default function ContactShowcase() {
                       Phone
                     </h3>
                     <a
-                      href="tel:15045551234"
+                      href="tel:15044503496"
                       className="mt-1 block text-sm font-medium text-white transition-opacity hover:opacity-80"
                     >
-                      (504) 555-1234
+                      (504) 450-3496
                     </a>
                   </div>
                   <div>
@@ -78,7 +161,7 @@ export default function ContactShowcase() {
                       Coverage
                     </h3>
                     <p className="mt-1 text-sm text-white/80">
-                      Greater New Orleans & Northshore
+                      Greater New Orleans Area
                     </p>
                   </div>
                 </section>
@@ -101,26 +184,38 @@ export default function ContactShowcase() {
                 Tell us about your pool and select preferred follow-up details. We'll be in touch within one business day.
               </p>
 
-              <form className="mt-4 grid gap-3 md:gap-4">
+              <form onSubmit={handleSubmit} className="mt-4 grid gap-3 md:gap-4">
+                {error && (
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-800 text-xs md:text-sm">
+                    {error}
+                  </div>
+                )}
+
                 <div className="grid gap-2 md:grid-cols-2">
                   <label className="flex flex-col gap-1">
                     <span className="text-xs font-medium text-[#0B1F3F]">
-                      Name
+                      Name <span className="text-red-500">*</span>
                     </span>
                     <input
                       type="text"
                       name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="Your name"
                       className="rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
                     />
                   </label>
                   <label className="flex flex-col gap-1">
                     <span className="text-xs font-medium text-[#0B1F3F]">
-                      Email
+                      Email <span className="text-red-500">*</span>
                     </span>
                     <input
                       type="email"
                       name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="name@email.com"
                       className="rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
                     />
@@ -134,7 +229,9 @@ export default function ContactShowcase() {
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="(504) 555-1234"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="(504) 450-3496"
                     className="rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
                   />
                 </label>
@@ -145,12 +242,11 @@ export default function ContactShowcase() {
                   </span>
                   <select
                     name="service"
+                    value={formData.service}
+                    onChange={handleChange}
                     className="rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
-                    defaultValue=""
                   >
-                    <option value="" disabled>
-                      Select one
-                    </option>
+                    <option value="">Select one</option>
                     <option value="maintenance">Recurring maintenance</option>
                     <option value="repair">Equipment repair</option>
                     <option value="renovation">Renovation planning</option>
@@ -164,6 +260,8 @@ export default function ContactShowcase() {
                   </span>
                   <textarea
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Share details about your pool, timeline, or questions."
                     rows={3}
                     className="resize-none rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
@@ -174,8 +272,13 @@ export default function ContactShowcase() {
                   <p className="text-center text-xs text-[#536471] md:text-left">
                     We respond within one business day. No marketing emails—ever.
                   </p>
-                  <Button type="submit" variant="primary" size="md">
-                    Send
+                  <Button 
+                    type="submit" 
+                    variant="primary" 
+                    size="md"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send'}
                   </Button>
                 </div>
               </form>
@@ -183,6 +286,14 @@ export default function ContactShowcase() {
           </div>
         </div>
       </div>
+
+      {/* Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title="Thank You!"
+        message="We've received your message and will be in touch within one business day."
+      />
     </section>
   );
 }

@@ -3,7 +3,7 @@ import ServicesShowcase from "@/components/pages/ServicesShowcase";
 
 export const metadata: Metadata = {
   title: "Pool Services in New Orleans | Maintenance, Repair & Renovation",
-  description: "Comprehensive pool services in New Orleans: weekly maintenance, equipment repair, and renovation guidance. Licensed professionals serving Greater New Orleans & Northshore. Get a free consultation.",
+  description: "Comprehensive pool services in New Orleans: weekly maintenance, equipment repair, and renovation guidance. Licensed professionals serving Greater New Orleans Area. Get a free consultation.",
   keywords: [
     "pool maintenance New Orleans",
     "pool repair service",

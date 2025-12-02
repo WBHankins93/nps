@@ -58,7 +58,6 @@ export default function GallerySection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1F3F] mb-6 md:mb-8">
             Our Work
           </h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#1B5A7D] to-transparent mx-auto mb-8 md:mb-10"></div>
           <p className="text-lg md:text-xl lg:text-2xl text-[#536471] max-w-3xl mx-auto font-light leading-relaxed px-4">
             Take a look at some of our recent projects and see the quality we bring to every pool.
           </p>

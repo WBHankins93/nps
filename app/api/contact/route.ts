@@ -39,10 +39,13 @@ export async function POST(request: NextRequest) {
     };
     const serviceDisplay = service ? (serviceLabels[service] || service) : 'Not specified';
     
-    // Send to verified email for testing (Resend free tier restriction)
+    // Email recipients - send to both test and client email
+    const recipients = ['ben@sproutflow-studio.com', 'nolapoolsolutions@gmail.com'];
+    
+    // Send to both test and client email
     const emailResult = await resend.emails.send({
       from: fromEmail,
-      to: 'ben@sproutflow-studio.com',
+      to: recipients,
       subject: `New Pool Service Inquiry from ${name}`,
       html: `
         <!DOCTYPE html>
@@ -102,7 +105,7 @@ export async function POST(request: NextRequest) {
             </div>
             
             <div style="margin-top: 25px; padding: 15px; background-color: #E8F4F8; border-radius: 4px; font-size: 12px; color: #536471;">
-              <p style="margin: 0;"><strong>Note:</strong> This is a test email sent to ben@sproutflow-studio.com. Production emails will be sent to nolapoolsolutions@gmail.com.</p>
+              <p style="margin: 0;"><strong>Note:</strong> This inquiry was submitted through the NOLA Pool Solutions website contact form.</p>
             </div>
           </div>
           

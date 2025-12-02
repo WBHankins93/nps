@@ -40,13 +40,10 @@ export async function POST(request: NextRequest) {
     };
     const serviceDisplay = service ? (serviceLabels[service] || service) : 'Not specified';
     
-    // Determine recipients based on whether domain is verified
-    // If using onboarding@resend.dev, can only send to verified emails
-    // If using custom domain, can send to any email
-    const isTestMode = fromEmail === 'onboarding@resend.dev';
-    const recipients = isTestMode 
-      ? ['ben@sproutflow-studio.com'] // Only verified email in test mode
-      : ['ben@sproutflow-studio.com', 'nolapoolsolutions@gmail.com']; // Both in production with verified domain
+    // Email recipient - currently set to test email only
+    // To switch to client email: change to ['nolapoolsolutions@gmail.com']
+    // To send to both: change to ['ben@sproutflow-studio.com', 'nolapoolsolutions@gmail.com']
+    const recipients = ['ben@sproutflow-studio.com'];
     
     // Send email
     const emailResult = await resend.emails.send({
@@ -112,7 +109,6 @@ export async function POST(request: NextRequest) {
             
             <div style="margin-top: 25px; padding: 15px; background-color: #E8F4F8; border-radius: 4px; font-size: 12px; color: #536471;">
               <p style="margin: 0;"><strong>Note:</strong> This inquiry was submitted through the NOLA Pool Solutions website contact form.</p>
-              ${isTestMode ? '<p style="margin: 10px 0 0 0;"><strong>Action Required:</strong> Please forward this email to nolapoolsolutions@gmail.com</p>' : ''}
             </div>
           </div>
           

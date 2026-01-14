@@ -38,9 +38,6 @@ function VideoItem({ src, title }: { src: string; title: string }) {
         autoPlay
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
-      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 py-3 text-sm font-semibold tracking-wide text-white">
-        {title}
-      </figcaption>
     </figure>
   );
 }
@@ -173,9 +170,6 @@ function AutoCarousel({ items, direction = 'left', speed = 1 }: { items: Gallery
                 sizes="(max-width: 640px) 240px, (max-width: 767px) 280px, (max-width: 1023px) 300px, (max-width: 1279px) 320px, 360px"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-3 py-2 text-xs font-semibold tracking-wide text-white sm:px-4 sm:py-3 sm:text-sm">
-                {item.title}
-              </figcaption>
             </figure>
           );
         })}

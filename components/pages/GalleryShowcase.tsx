@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef, useEffect, useMemo } from "react";
 
 
-function VideoItem({ src, title }: { src: string; title: string }) {
+function VideoItem({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -45,7 +45,6 @@ function VideoItem({ src, title }: { src: string; title: string }) {
 interface GalleryItem {
   type: 'image' | 'video';
   src: string;
-  title: string;
 }
 
 function AutoCarousel({ items, direction = 'left', speed = 1 }: { items: GalleryItem[]; direction?: 'left' | 'right'; speed?: number }) {
@@ -150,13 +149,13 @@ function AutoCarousel({ items, direction = 'left', speed = 1 }: { items: Gallery
       >
         {duplicatedItems.map((item, index) => {
           if (!item.src) {
-            console.warn(`Missing URL for gallery item: ${item.title}`);
+            console.warn(`Missing URL for gallery item at index ${index}`);
             return null;
           }
           
           return item.type === 'video' ? (
             <div key={`${item.src}-${index}`} className="flex-shrink-0 w-[240px] sm:w-[280px] md:w-[300px] lg:w-[320px] xl:w-[360px]">
-              <VideoItem src={item.src} title={item.title} />
+              <VideoItem src={item.src} />
             </div>
           ) : (
             <figure
@@ -165,7 +164,7 @@ function AutoCarousel({ items, direction = 'left', speed = 1 }: { items: Gallery
             >
               <Image
                 src={item.src}
-                alt={`${item.title} - Pool renovation project by NOLA Pool Solutions in New Orleans`}
+                alt="Pool renovation project by NOLA Pool Solutions in New Orleans"
                 fill
                 sizes="(max-width: 640px) 240px, (max-width: 767px) 280px, (max-width: 1023px) 300px, (max-width: 1279px) 320px, 360px"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -184,110 +183,89 @@ export default function GalleryShowcase() {
     {
       type: 'image' as const,
       src: '/nps-images/IMG_1_0108.jpg',
-      title: "Round Pool Maintenance",
     },
     {
       type: 'image' as const,
       src: '/nps-images/IMG_1_0443.jpg',
-      title: "Residential Pool Service",
     },
     {
       type: 'image' as const,
       src: '/nps-images/IMG_1_2109.jpg',
-      title: "Freeform Pool Care",
     },
     {
       type: 'image' as const,
       src: '/nps-images/IMG_1_2911.jpg',
-      title: "Robotic Pool Cleaning",
     },
     {
       type: 'image' as const,
       src: '/nps-images/IMG_1_2988.jpg',
-      title: "Luxury Pool Service",
     },
     {
       type: 'video' as const,
       src: '/nps-images/IMG_1_2837.mp4',
-      title: "Pool Service in Action",
     },
     // Carousel 1 - nps-newest-images folder
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_1_5640.jpg',
-      title: "Tropical Pool Maintenance",
     },
     // Carousel 2 - nps-newest-images folder
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_2_5645.jpg',
-      title: "Professional Pool Cleaning",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_2_5650.jpg',
-      title: "Lap Pool Service",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/hero-background.jpg',
-      title: "Pool and Spa Maintenance",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_2_5804.jpg',
-      title: "Classic Pool Care",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_2_5853.jpg',
-      title: "Brick Coping Pool Service",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_2_6023.jpg',
-      title: "Weekly Pool Maintenance",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_2_6192.jpg',
-      title: "Custom Tile Pool Care",
     },
     // Carousel 3 - nps-newest-images folder
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_3_6235.jpg',
-      title: "Standard Pool Service",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_3_6630.jpg',
-      title: "Commercial Pool Maintenance",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_3_6674.jpg',
-      title: "Modern Pool Care",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_3_6843.jpg',
-      title: "Privacy Fence Pool Service",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_3_7004.jpg',
-      title: "Spa Combination Pool Care",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_3_7005.jpg',
-      title: "Kidney-Shaped Pool Service",
     },
     {
       type: 'image' as const,
       src: '/nps-newest-images/IMG_3_7031.jpg',
-      title: "Automated Pool Maintenance",
     },
   ], []);
 

@@ -39,8 +39,7 @@ For now, the form uses `onboarding@resend.dev` which works for testing.
 2. Navigate to `/contact`
 3. Fill out and submit the form
 4. Check:
-   - `benhankins.work@gmail.com` should receive a test email
-   - `nolapoolsolutions@gmail.com` should receive the client email
+   - `nolapoolsolutions@gmail.com` should receive the email
    - The confirmation modal should appear
 
 **Note:** Form submissions are only sent via email. No data is stored in a database.

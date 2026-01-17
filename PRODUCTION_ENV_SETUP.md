@@ -86,12 +86,18 @@ Once your domain is verified:
    - **Value**: `noreply@nolapoolsolutions.com` (or any email using your verified domain)
 2. Redeploy your application
 
-### Alternative: Temporary Workaround
+### Alternative: Quick Setup (Verify Email Address)
 
-If you can't verify the domain immediately:
-- Emails will be sent to `ben@sproutflow-studio.com` only
-- The email will include a note to forward it to `nolapoolsolutions@gmail.com`
-- This works for testing but requires manual forwarding
+If you can't verify the domain immediately, you can verify the recipient email address instead:
+
+1. Go to [resend.com/emails](https://resend.com/emails) in your Resend dashboard
+2. Click **Add Email** or **Verify Email**
+3. Enter `nolapoolsolutions@gmail.com`
+4. Check the Gmail inbox for a verification email from Resend
+5. Click the verification link in the email
+6. Once verified, emails will be sent immediately
+
+**Note:** This works for immediate setup, but domain verification is recommended for production as it allows sending to any email address and improves deliverability.
 
 ## Verifying the Setup
 
@@ -101,9 +107,7 @@ After adding the environment variable and redeploying:
 2. Fill out and submit the form
 3. Check that:
    - The confirmation modal appears
-   - You receive an email at `ben@sproutflow-studio.com`
-   - If domain is verified: The client receives an email at `nolapoolsolutions@gmail.com`
-   - If domain is NOT verified: Forward the email to `nolapoolsolutions@gmail.com`
+   - The client receives an email at `nolapoolsolutions@gmail.com`
 
 ## Troubleshooting
 
@@ -123,7 +127,11 @@ This means you're trying to send to an unverified email address while using `onb
 
 **Solutions:**
 1. **Verify your domain** (recommended for production) - see "Domain Verification" section above
-2. **Temporary workaround**: The form will send to `ben@sproutflow-studio.com` only. Forward emails manually to the client.
+2. **Quick fix**: Verify `nolapoolsolutions@gmail.com` in your Resend account:
+   - Go to [resend.com/emails](https://resend.com/emails)
+   - Add and verify `nolapoolsolutions@gmail.com`
+   - Check Gmail for verification email and click the link
+   - Once verified, emails will work immediately
 
 ### Emails Not Sending
 

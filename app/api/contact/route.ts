@@ -40,10 +40,8 @@ export async function POST(request: NextRequest) {
     };
     const serviceDisplay = service ? (serviceLabels[service] || service) : 'Not specified';
     
-    // Email recipient - currently set to test email only
-    // To switch to client email: change to ['nolapoolsolutions@gmail.com']
-    // To send to both: change to ['ben@sproutflow-studio.com', 'nolapoolsolutions@gmail.com']
-    const recipients = ['ben@sproutflow-studio.com'];
+    // Email recipient - set to client email
+    const recipients = ['nolapoolsolutions@gmail.com'];
     
     // Send email
     const emailResult = await resend.emails.send({

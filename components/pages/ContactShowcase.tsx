@@ -125,7 +125,8 @@ export default function ContactShowcase() {
                 </section>
 
                 <section className="grid gap-3 md:grid-cols-2 md:gap-4">
-                  <div>
+                  {/* Phone Component */}
+                  <div className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
                     <h3 className="text-xs font-semibold uppercase tracking-wide text-white/70">
                       Phone
                     </h3>
@@ -136,7 +137,9 @@ export default function ContactShowcase() {
                       (504) 450-3496
                     </a>
                   </div>
-                  <div>
+
+                  {/* Email Component */}
+                  <div className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
                     <h3 className="text-xs font-semibold uppercase tracking-wide text-white/70">
                       Email
                     </h3>
@@ -147,7 +150,9 @@ export default function ContactShowcase() {
                       nolapoolsolutions@gmail.com
                     </a>
                   </div>
-                  <div>
+
+                  {/* Service Hours Component */}
+                  <div className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
                     <h3 className="text-xs font-semibold uppercase tracking-wide text-white/70">
                       Service Hours
                     </h3>
@@ -156,7 +161,9 @@ export default function ContactShowcase() {
                     </p>
                     <p className="text-sm text-white/80">Sat: By appointment</p>
                   </div>
-                  <div>
+
+                  {/* Coverage Component */}
+                  <div className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
                     <h3 className="text-xs font-semibold uppercase tracking-wide text-white/70">
                       Coverage
                     </h3>

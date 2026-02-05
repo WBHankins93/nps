@@ -103,7 +103,7 @@ export default function ContactShowcase() {
       <div className="relative z-10 flex min-h-full items-start justify-center px-6 py-8 pb-32 text-white md:px-10 md:py-6 md:pb-24 lg:px-16 lg:pb-28 md:h-full">
         <div className="w-full max-w-7xl">
           <header className="mb-4 flex flex-col items-center space-y-1 text-center md:mb-6 md:space-y-2">
-            <p className="text-xs uppercase tracking-[0.32em] text-white/60">
+            <p className="text-xs uppercase tracking-[0.25em] text-white/60">
               NOLA Pool Solutions
             </p>
             <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
@@ -183,11 +183,11 @@ export default function ContactShowcase() {
             </div>
 
             {/* RIGHT PANEL - COMPACT PADDING */}
-            <div className="rounded-3xl border border-white/15 bg-white/90 p-6 text-[#0B1F3F] shadow-xl backdrop-blur md:p-8 lg:p-10">
+            <div className="rounded-3xl border border-white/15 bg-white/90 p-6 text-midnight shadow-xl backdrop-blur md:p-8 lg:p-10">
               <h2 className="text-center text-lg font-semibold md:text-xl">
                 Start the conversation
               </h2>
-              <p className="mt-1 text-center text-xs leading-relaxed text-[#536471] md:text-sm">
+              <p className="mt-1 text-center text-xs leading-relaxed text-text-secondary md:text-sm">
                 Tell us about your pool and select preferred follow-up details. We'll be in touch within one business day.
               </p>
 
@@ -200,7 +200,7 @@ export default function ContactShowcase() {
 
                 <div className="grid gap-2 md:grid-cols-2">
                   <label className="flex flex-col gap-1">
-                    <span className="text-xs font-medium text-[#0B1F3F]">
+                    <span className="text-xs font-medium text-midnight">
                       Name <span className="text-red-500">*</span>
                     </span>
                     <input
@@ -210,11 +210,11 @@ export default function ContactShowcase() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
+                      className="rounded-xl border border-ocean/20 bg-white px-3 py-2 text-xs text-midnight outline-none transition focus:border-cerulean focus:ring-2 focus:ring-cerulean/30 md:text-sm"
                     />
                   </label>
                   <label className="flex flex-col gap-1">
-                    <span className="text-xs font-medium text-[#0B1F3F]">
+                    <span className="text-xs font-medium text-midnight">
                       Email <span className="text-red-500">*</span>
                     </span>
                     <input
@@ -224,13 +224,13 @@ export default function ContactShowcase() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="name@email.com"
-                      className="rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
+                      className="rounded-xl border border-ocean/20 bg-white px-3 py-2 text-xs text-midnight outline-none transition focus:border-cerulean focus:ring-2 focus:ring-cerulean/30 md:text-sm"
                     />
                   </label>
                 </div>
 
                 <label className="flex flex-col gap-1">
-                  <span className="text-xs font-medium text-[#0B1F3F]">
+                  <span className="text-xs font-medium text-midnight">
                     Phone
                   </span>
                   <input
@@ -239,19 +239,19 @@ export default function ContactShowcase() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="(504) 450-3496"
-                    className="rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
+                    className="rounded-xl border border-ocean/20 bg-white px-3 py-2 text-xs text-midnight outline-none transition focus:border-cerulean focus:ring-2 focus:ring-cerulean/30 md:text-sm"
                   />
                 </label>
 
                 <label className="flex flex-col gap-1">
-                  <span className="text-xs font-medium text-[#0B1F3F]">
+                  <span className="text-xs font-medium text-midnight">
                     Service Needs
                   </span>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
+                    className="rounded-xl border border-ocean/20 bg-white px-3 py-2 text-xs text-midnight outline-none transition focus:border-cerulean focus:ring-2 focus:ring-cerulean/30 md:text-sm"
                   >
                     <option value="">Select one</option>
                     <option value="maintenance">Recurring maintenance</option>
@@ -262,7 +262,7 @@ export default function ContactShowcase() {
                 </label>
 
                 <label className="flex flex-col gap-1">
-                  <span className="text-xs font-medium text-[#0B1F3F]">
+                  <span className="text-xs font-medium text-midnight">
                     Message
                   </span>
                   <textarea
@@ -271,12 +271,12 @@ export default function ContactShowcase() {
                     onChange={handleChange}
                     placeholder="Share details about your pool, timeline, or questions."
                     rows={3}
-                    className="resize-none rounded-xl border border-[#1B5A7D]/20 bg-white px-3 py-2 text-xs text-[#0B1F3F] outline-none transition focus:border-[#2C7DA0] focus:ring-2 focus:ring-[#2C7DA0]/30 md:text-sm"
+                    className="resize-none rounded-xl border border-ocean/20 bg-white px-3 py-2 text-xs text-midnight outline-none transition focus:border-cerulean focus:ring-2 focus:ring-cerulean/30 md:text-sm"
                   />
                 </label>
 
                 <div className="flex flex-col items-center gap-3 md:flex-row md:items-center md:justify-between">
-                  <p className="text-center text-xs text-[#536471] md:text-left">
+                  <p className="text-center text-xs text-text-secondary md:text-left">
                     We respond within one business day. No marketing emails—ever.
                   </p>
                   <Button 

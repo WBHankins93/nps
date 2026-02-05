@@ -83,17 +83,17 @@ export default function ConfirmationModal({
         </div>
 
         {/* Content */}
-        <h2 className="text-2xl font-bold text-[#0B1F3F] text-center mb-3">
+        <h2 className="text-2xl font-bold text-midnight text-center mb-3">
           {title}
         </h2>
-        <p className="text-[#536471] text-center leading-relaxed mb-6">
+        <p className="text-text-secondary text-center leading-relaxed mb-6">
           {message}
         </p>
 
         {/* Button */}
         <button
           onClick={onClose}
-          className="w-full bg-[#1B5A7D] hover:bg-[#2C7DA0] text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+          className="w-full bg-ocean hover:bg-cerulean text-white font-semibold py-3 px-6 rounded-xl transition-colors"
         >
           Close
         </button>

@@ -71,13 +71,13 @@ export default function HomeShowcase() {
         {/* Main Content - REDUCED PADDING - was p-8 md:p-10, now p-4 md:p-6 */}
         <div className="flex w-full max-w-5xl flex-col items-center text-center mx-auto">
           <div className="p-4 md:p-6 w-full flex flex-col items-center">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/90 md:text-sm drop-shadow-lg mb-3 text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/90 md:text-sm drop-shadow-lg mb-3 text-center">
               Premium Pool Care | New Orleans
             </p>
             <h1 className="text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_12px_32px_rgba(11,31,63,0.45)] md:text-5xl lg:text-6xl mb-4 text-center">
               NOLA Pool Solutions
             </h1>
-            <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm text-center">
+            <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm text-center font-accent">
               Enjoy your pool; leave the work to us.
             </p>
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm text-center">

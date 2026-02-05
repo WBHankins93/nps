@@ -87,10 +87,10 @@
   --color-gold: var(--color-gold);
   --color-purple: var(--color-purple);
 
-  /* Font families */
-  --font-heading: var(--font-montserrat);
-  --font-body: var(--font-inter);
-  --font-accent: var(--font-playfair);
+  /* Font families - Clear semantic naming */
+  --font-heading: var(--font-montserrat);  /* Plus Jakarta Sans - for headings */
+  --font-body: var(--font-inter);          /* Work Sans - for body text */
+  --font-accent: var(--font-playfair);     /* Playfair Display - for special accents */
 }
 
 /* FIXED: Only reset margin and box-sizing, NOT padding (Tailwind needs to control padding) */
@@ -240,12 +240,32 @@ button {
   background-color: var(--color-ocean);
 }
 
+.text-cerulean {
+  color: var(--color-cerulean);
+}
+
+.bg-cerulean {
+  background-color: var(--color-cerulean);
+}
+
 .text-midnight {
   color: var(--color-midnight);
 }
 
 .bg-midnight {
   background-color: var(--color-midnight);
+}
+
+.text-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-gold-shimmer {
+  color: var(--color-gold-shimmer);
+}
+
+.text-bronze {
+  color: var(--color-bronze);
 }
 
 .gradient-ocean {
@@ -268,4 +288,9 @@ button {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Font utility classes */
+.font-accent {
+  font-family: var(--font-accent), serif;
 }

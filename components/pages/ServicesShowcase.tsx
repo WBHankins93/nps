@@ -110,7 +110,7 @@ export default function ServicesShowcase() {
             Our Services
           </h1>
           <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-ocean to-transparent mx-auto mb-3" />
-          <p className="text-xs md:text-sm text-[var(--color-text-secondary)] font-light max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm text-[var(--color-text-secondary)] font-light max-w-2xl mx-auto font-accent">
             From weekly maintenance to complex repairs and renovation planning
           </p>
         </div>

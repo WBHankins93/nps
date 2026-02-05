@@ -8,7 +8,7 @@ const GOOGLE_REVIEWS_URL = process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || "https:
 
 export default function Footer() {
   return (
-    <footer className="flex flex-shrink-0 items-center bg-[#0B1F3F] px-6 md:px-10 lg:px-16">
+    <footer className="flex flex-shrink-0 items-center bg-midnight px-6 md:px-10 lg:px-16">
       <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between py-3 text-xs text-white/80 md:py-4 md:text-sm flex-wrap gap-2">
         <p>
           © {new Date().getFullYear()} NOLA Pool Solutions. All rights reserved.
@@ -18,7 +18,7 @@ export default function Footer() {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-[#D4AF6E] whitespace-nowrap"
+            className="transition-colors hover:text-gold-shimmer whitespace-nowrap"
           >
             Leave Us A Review!
           </a>
@@ -26,13 +26,13 @@ export default function Footer() {
             href="https://getskimmer.com/Account/Login/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-[#D4AF6E] whitespace-nowrap"
+            className="transition-colors hover:text-gold-shimmer whitespace-nowrap"
           >
             Skimmer Customer Portal
           </a>
           <a
             href="mailto:nolapoolsolutions@gmail.com"
-            className="transition-colors hover:text-[#D4AF6E]"
+            className="transition-colors hover:text-gold-shimmer"
           >
             nolapoolsolutions@gmail.com
           </a>

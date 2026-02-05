@@ -65,7 +65,7 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-14">
           {/* Contact Form */}
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-10 md:p-12 lg:p-14 shadow-xl">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#0B1F3F] mb-8 md:mb-10">Send Us a Message</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-midnight mb-8 md:mb-10">Send Us a Message</h3>
 
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
@@ -75,7 +75,7 @@ export default function ContactSection() {
 
             <form onSubmit={handleSubmit} className="space-y-6 md:space-y-7">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-[#536471] mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-text-secondary mb-2">
                   Name *
                 </label>
                 <input
@@ -85,13 +85,13 @@ export default function ContactSection() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-ocean focus:border-ocean transition-all text-base"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#536471] mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-text-secondary mb-2">
                   Email *
                 </label>
                 <input
@@ -101,13 +101,13 @@ export default function ContactSection() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-ocean focus:border-ocean transition-all text-base"
                   placeholder="your@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-[#536471] mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-text-secondary mb-2">
                   Phone *
                 </label>
                 <input
@@ -117,13 +117,13 @@ export default function ContactSection() {
                   required
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-ocean focus:border-ocean transition-all text-base"
                   placeholder="(504) 450-3496"
                 />
               </div>
 
               <div>
-                <label htmlFor="serviceType" className="block text-sm font-medium text-[#536471] mb-2">
+                <label htmlFor="serviceType" className="block text-sm font-medium text-text-secondary mb-2">
                   Service Needed *
                 </label>
                 <select
@@ -132,7 +132,7 @@ export default function ContactSection() {
                   required
                   value={formData.serviceType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1B5A7D] focus:border-[#1B5A7D] transition-all text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-ocean focus:border-ocean transition-all text-base"
                 >
                   <option value="">Select a service</option>
                   <option value="maintenance">Pool Maintenance</option>
@@ -143,7 +143,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#536471] mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-text-secondary mb-2">
                   Message *
                 </label>
                 <textarea
@@ -178,7 +178,7 @@ export default function ContactSection() {
               <div className="space-y-6 md:space-y-8">
                 <a
                   href="mailto:nolapoolsolutions@gmail.com"
-                  className="flex items-center gap-4 md:gap-5 text-white hover:text-[#D4AF6E] transition-colors group"
+                  className="flex items-center gap-4 md:gap-5 text-white hover:text-gold-shimmer transition-colors group"
                 >
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#B8956A] to-[#D4AF6E] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg">
                     <svg className="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -193,7 +193,7 @@ export default function ContactSection() {
 
                 <a
                   href="tel:15044503496"
-                  className="flex items-center gap-4 md:gap-5 text-white hover:text-[#D4AF6E] transition-colors group"
+                  className="flex items-center gap-4 md:gap-5 text-white hover:text-gold-shimmer transition-colors group"
                 >
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#B8956A] to-[#D4AF6E] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-lg">
                     <svg className="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -240,7 +240,7 @@ export default function ContactSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-[#1B5A7D]"
+                className="w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-ocean"
                 href={process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || "https://www.google.com/maps/search/?api=1&query=NOLA+Pool+Solutions+New+Orleans"}
                 target="_blank"
                 rel="noopener noreferrer"

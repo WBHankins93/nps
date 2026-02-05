@@ -47,16 +47,16 @@ export default function Button({
     switch (variant) {
       case 'primary':
         return {
-          background: 'linear-gradient(135deg, #1B5A7D 0%, #2C7DA0 100%)',
+          background: 'linear-gradient(135deg, var(--color-ocean) 0%, var(--color-cerulean) 100%)',
         };
       case 'secondary':
         return {
-          background: 'linear-gradient(135deg, #B8956A 0%, #D4AF6E 100%)',
+          background: 'linear-gradient(135deg, var(--color-brass) 0%, var(--color-gold-shimmer) 100%)',
         };
       case 'outline':
         return {
-          borderColor: '#1B5A7D',
-          color: '#1B5A7D',
+          borderColor: 'var(--color-ocean)',
+          color: 'var(--color-ocean)',
           backgroundColor: 'transparent',
         };
       default:

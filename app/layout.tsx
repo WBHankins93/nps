@@ -6,25 +6,27 @@ import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 // Modern, friendly sans-serif for headings - professional but warmer than Montserrat
+// Note: Variable name --font-montserrat is kept for backwards compatibility
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-montserrat", // Used as --font-heading in CSS
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 // Warm, readable sans-serif for body text - more approachable than Inter
+// Note: Variable name --font-inter is kept for backwards compatibility
 const workSans = Work_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-inter", // Used as --font-body in CSS
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-// Elegant serif for special headings/accents
+// Elegant serif for special headings/accents - used sparingly for visual hierarchy
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-playfair", // Used as --font-accent in CSS
   weight: ["400", "700"],
   display: "swap",
 });

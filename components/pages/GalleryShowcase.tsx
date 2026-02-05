@@ -275,7 +275,7 @@ export default function GalleryShowcase() {
   const carousel3 = allItems.slice(14, 21);
 
   return (
-    <section className="relative w-full flex flex-col bg-[#0B1F3F] showcase-section" style={{ 
+    <section className="relative w-full flex flex-col bg-midnight showcase-section" style={{ 
       height: 'auto',
       minHeight: 'calc(100vh - 80px - 64px)'
     }}>
@@ -288,7 +288,7 @@ export default function GalleryShowcase() {
         <div className="w-full max-w-7xl flex flex-col">
           {/* Header - moved up with less spacing */}
           <header className="mb-4 flex flex-col items-center space-y-1 text-center md:mb-6 md:space-y-2">
-            <p className="text-xs uppercase tracking-[0.32em] text-white/60 md:text-sm">
+            <p className="text-xs uppercase tracking-[0.25em] text-white/60 md:text-sm">
               Portfolio Preview
             </p>
             <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">

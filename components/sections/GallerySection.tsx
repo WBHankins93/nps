@@ -55,10 +55,10 @@ export default function GallerySection() {
     <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-white via-[#F8FBFF] to-white py-16 md:py-24 lg:py-32 px-6 md:px-10 lg:px-16 relative overflow-hidden">
       <div className="w-full max-w-[1400px] mx-auto">
         <div className="text-center mb-16 md:mb-20 lg:mb-24">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1F3F] mb-6 md:mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-midnight mb-6 md:mb-8">
             Our Work
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-[#536471] max-w-3xl mx-auto font-light leading-relaxed px-4">
+          <p className="text-lg md:text-xl lg:text-2xl text-text-secondary max-w-3xl mx-auto font-light leading-relaxed px-4">
             Take a look at some of our recent projects and see the quality we bring to every pool.
           </p>
         </div>
@@ -108,7 +108,7 @@ export default function GallerySection() {
             onClick={() => setSelectedImage(null)}
           >
             <button
-              className="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-[#D4AF6E] transition-colors z-10 bg-black/50 rounded-full p-2 backdrop-blur-sm"
+              className="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-gold-shimmer transition-colors z-10 bg-black/50 rounded-full p-2 backdrop-blur-sm"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedImage(null);

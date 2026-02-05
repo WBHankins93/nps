@@ -62,16 +62,10 @@ export default function Navigation() {
             />
           </span>
           <span className="hidden flex-col leading-tight pr-2 md:flex md:pr-3 lg:pr-4">
-            <span
-              className="text-lg font-semibold tracking-tight text-[#0B1F3F] md:text-xl lg:text-2xl"
-              style={{ fontFamily: "'Montserrat', 'Work Sans', sans-serif" }}
-            >
+            <span className="text-lg font-semibold tracking-tight text-midnight md:text-xl lg:text-2xl">
               NOLA POOL
             </span>
-            <span
-              className="text-xs font-medium uppercase tracking-[0.3em] text-[#2C7DA0] md:text-sm"
-              style={{ fontFamily: "'Montserrat', 'Work Sans', sans-serif" }}
-            >
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-cerulean md:text-sm">
               Solutions
             </span>
           </span>
@@ -83,9 +77,7 @@ export default function Navigation() {
               key={item.href}
               href={item.href}
               className="group relative px-3 py-2 text-base font-medium transition-all duration-300 md:px-4 md:text-lg"
-              style={{
-                color: isActive(item.href) ? '#1B5A7D' : '#536471',
-              }}
+              className={isActive(item.href) ? 'text-ocean' : 'text-text-secondary'}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="relative z-10 transition-opacity group-hover:opacity-80">
@@ -113,14 +105,13 @@ export default function Navigation() {
         </nav>
 
         <button
-          className="rounded-lg p-2 transition-all duration-300 hover:bg-gray-100 md:hidden"
+          className="rounded-lg p-3 transition-all duration-300 hover:bg-gray-100 md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center"
           onClick={() => setIsMobileMenuOpen((open) => !open)}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
         >
           <svg
-            className="h-6 w-6 transition-all duration-300"
-            style={{ color: '#0B1F3F' }}
+            className="h-6 w-6 transition-all duration-300 text-midnight"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -147,16 +138,11 @@ export default function Navigation() {
             <Link
               key={item.href}
               href={item.href}
-              className={`block rounded-xl px-6 py-4 text-lg font-medium transition-all duration-300 ${
+              className={`block rounded-xl px-6 py-4 text-lg font-medium transition-all duration-300 min-h-[44px] flex items-center ${
                 isActive(item.href)
-                  ? 'text-white'
-                  : 'text-gray-700 hover:text-white'
+                  ? 'text-white bg-gradient-to-r from-ocean to-cerulean'
+                  : 'text-gray-700 hover:text-white bg-gradient-to-r from-ocean/8 to-cerulean/8'
               }`}
-              style={{
-                background: isActive(item.href)
-                  ? 'linear-gradient(135deg, #1B5A7D 0%, #2C7DA0 100%)'
-                  : 'linear-gradient(135deg, rgba(27, 90, 125, 0.08) 0%, rgba(44, 125, 160, 0.08) 100%)',
-              }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
@@ -169,7 +155,8 @@ export default function Navigation() {
         className="absolute bottom-0 left-0 right-0 h-px"
         style={{
           background:
-            'linear-gradient(90deg, transparent 0%, rgba(27, 90, 125, 0.1) 50%, transparent 100%)',
+            'linear-gradient(90deg, transparent 0%, var(--color-ocean) 50%, transparent 100%)',
+          opacity: 0.1,
         }}
       />
     </header>

@@ -62,10 +62,10 @@ export default function Navigation() {
             />
           </span>
           <span className="hidden flex-col leading-tight pr-1 md:flex md:pr-2 lg:pr-3">
-            <span className="text-xl font-normal tracking-tight text-midnight md:text-2xl lg:text-3xl" style={{ fontFamily: 'var(--font-bebas), sans-serif', letterSpacing: '0.02em' }}>
+            <span className="text-lg font-normal tracking-tight text-midnight md:text-xl lg:text-2xl" style={{ fontFamily: 'var(--font-bebas), sans-serif', letterSpacing: '0.02em' }}>
               NOLA POOL
             </span>
-            <span className="text-sm font-semibold italic text-cerulean md:text-base lg:text-lg" style={{ fontFamily: 'var(--font-cormorant), serif' }}>
+            <span className="text-sm font-normal tracking-tight text-cerulean md:text-base lg:text-lg" style={{ fontFamily: 'var(--font-bebas), sans-serif', letterSpacing: '0.02em' }}>
               Solutions
             </span>
           </span>

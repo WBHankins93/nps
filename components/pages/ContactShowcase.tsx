@@ -103,10 +103,10 @@ export default function ContactShowcase() {
       <div className="relative z-10 flex min-h-full items-start justify-center px-6 py-8 pb-32 text-white md:px-10 md:py-6 md:pb-24 lg:px-16 lg:pb-28 md:h-full">
         <div className="w-full max-w-7xl">
           <header className="mb-4 flex flex-col items-center space-y-1 text-center md:mb-6 md:space-y-2">
-            <p className="text-xs uppercase tracking-[0.25em] text-white/60">
+            <p className="text-xs uppercase tracking-[0.25em] text-white/60" style={{ fontFamily: 'var(--font-cormorant), serif' }}>
               NOLA Pool Solutions
             </p>
-            <h1 className="text-3xl font-extrabold md:text-4xl lg:text-5xl text-white decorative-line" style={{ fontFamily: 'var(--font-montserrat-title), sans-serif', letterSpacing: '-0.02em' }}>
+            <h1 className="text-2xl font-normal md:text-3xl lg:text-4xl text-white decorative-line" style={{ fontFamily: 'var(--font-bebas), sans-serif', letterSpacing: '0.02em' }}>
               Contact us today!
             </h1>
           </header>

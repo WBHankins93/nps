@@ -103,10 +103,10 @@ export default function ServicesShowcase() {
         
         {/* Header - Compact */}
         <div className="text-center mb-8 md:mb-10">
-          <p className="text-cerulean text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-1">
+          <p className="text-cerulean text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-1" style={{ fontFamily: 'var(--font-cormorant), serif' }}>
             NOLA Pool Solutions
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-midnight mb-2 decorative-line" style={{ fontFamily: 'var(--font-montserrat-title), sans-serif', letterSpacing: '-0.02em' }}>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-midnight mb-2 decorative-line" style={{ fontFamily: 'var(--font-bebas), sans-serif', letterSpacing: '0.02em' }}>
             Our Services
           </h1>
           <p className="text-xs md:text-sm text-[var(--color-text-secondary)] font-light max-w-2xl mx-auto font-accent mt-4">

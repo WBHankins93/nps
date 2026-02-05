@@ -288,10 +288,10 @@ export default function GalleryShowcase() {
         <div className="w-full max-w-7xl flex flex-col">
           {/* Header - moved up with less spacing */}
           <header className="mb-4 flex flex-col items-center space-y-1 text-center md:mb-6 md:space-y-2">
-            <p className="text-xs uppercase tracking-[0.25em] text-white/60 md:text-sm">
+            <p className="text-xs uppercase tracking-[0.25em] text-white/60 md:text-sm" style={{ fontFamily: 'var(--font-cormorant), serif' }}>
               Portfolio Preview
             </p>
-            <h1 className="text-3xl font-extrabold md:text-4xl lg:text-5xl text-white decorative-line" style={{ fontFamily: 'var(--font-montserrat-title), sans-serif', letterSpacing: '-0.02em' }}>
+            <h1 className="text-2xl font-normal md:text-3xl lg:text-4xl text-white decorative-line" style={{ fontFamily: 'var(--font-bebas), sans-serif', letterSpacing: '0.02em' }}>
               Past Work Gallery
             </h1>
             <p className="max-w-2xl text-center text-sm leading-relaxed text-white/80 md:text-base mt-4">

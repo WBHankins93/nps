@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Work_Sans, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Work_Sans, Playfair_Display, Bebas_Neue, Montserrat, Cormorant_Garamond } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
@@ -28,6 +28,30 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair", // Used as --font-accent in CSS
   weight: ["400", "700"],
+  display: "swap",
+});
+
+// Bold & Modern: Condensed display font for hero titles and brand identity
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  variable: "--font-bebas",
+  weight: ["400"],
+  display: "swap",
+});
+
+// Professional geometric sans-serif for page titles
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat-title",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+// Elegant serif for brand accents (Solutions word)
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -111,7 +135,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${workSans.variable} ${plusJakartaSans.variable} ${playfair.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${workSans.variable} ${plusJakartaSans.variable} ${playfair.variable} ${bebasNeue.variable} ${montserrat.variable} ${cormorantGaramond.variable} antialiased flex flex-col min-h-screen`}>
         <StructuredData />
         <Navigation />
         <main className="flex-1 w-full">{children}</main>

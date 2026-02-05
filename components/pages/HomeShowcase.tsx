@@ -74,8 +74,9 @@ export default function HomeShowcase() {
             <p className="text-xs uppercase tracking-[0.3em] text-white/90 md:text-sm drop-shadow-lg mb-3 text-center">
               Premium Pool Care | New Orleans
             </p>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_12px_32px_rgba(11,31,63,0.45)] md:text-5xl lg:text-6xl mb-4 text-center">
-              NOLA Pool Solutions
+            <h1 className="text-5xl font-normal tracking-tight text-white drop-shadow-[0_12px_32px_rgba(11,31,63,0.45)] md:text-6xl lg:text-7xl mb-4 text-center leading-none" style={{ fontFamily: 'var(--font-bebas), sans-serif', letterSpacing: '0.02em' }}>
+              <span>NOLA Pool </span>
+              <span className="text-4xl md:text-5xl lg:text-6xl font-semibold italic" style={{ fontFamily: 'var(--font-cormorant), serif', letterSpacing: '0.05em' }}>Solutions</span>
             </h1>
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/80 drop-shadow-lg md:text-sm text-center font-accent">
               Enjoy your pool; leave the work to us.

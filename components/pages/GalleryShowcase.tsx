@@ -291,10 +291,10 @@ export default function GalleryShowcase() {
             <p className="text-xs uppercase tracking-[0.25em] text-white/60 md:text-sm">
               Portfolio Preview
             </p>
-            <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
+            <h1 className="text-3xl font-extrabold md:text-4xl lg:text-5xl text-white decorative-line" style={{ fontFamily: 'var(--font-montserrat-title), sans-serif', letterSpacing: '-0.02em' }}>
               Past Work Gallery
             </h1>
-            <p className="max-w-2xl text-center text-sm leading-relaxed text-white/80 md:text-base">
+            <p className="max-w-2xl text-center text-sm leading-relaxed text-white/80 md:text-base mt-4">
               A curated look at recent renovations and maintenance clients across greater New Orleans.
               Each project is an expression of our commitment to precision, ambience, and lasting quality.
             </p>

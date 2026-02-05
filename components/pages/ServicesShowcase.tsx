@@ -106,11 +106,10 @@ export default function ServicesShowcase() {
           <p className="text-cerulean text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-1">
             NOLA Pool Solutions
           </p>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-midnight mb-2">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-midnight mb-2 decorative-line" style={{ fontFamily: 'var(--font-montserrat-title), sans-serif', letterSpacing: '-0.02em' }}>
             Our Services
           </h1>
-          <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-ocean to-transparent mx-auto mb-3" />
-          <p className="text-xs md:text-sm text-[var(--color-text-secondary)] font-light max-w-2xl mx-auto font-accent">
+          <p className="text-xs md:text-sm text-[var(--color-text-secondary)] font-light max-w-2xl mx-auto font-accent mt-4">
             From weekly maintenance to complex repairs and renovation planning
           </p>
         </div>

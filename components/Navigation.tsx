@@ -49,9 +49,9 @@ export default function Navigation() {
       <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between pl-4 pr-6 md:h-24 md:pl-6 md:pr-10 lg:pl-8 lg:pr-16 xl:pl-10 xl:pr-20">
         <Link
           href="/"
-          className="flex items-center gap-1 transition-all duration-300 hover:opacity-90 md:gap-2"
+          className="flex items-center gap-0.5 transition-all duration-300 hover:opacity-90 md:gap-1"
         >
-          <span className="relative block h-12 w-28 pr-1 md:h-14 md:w-32 md:pr-2 lg:h-16 lg:w-36 lg:pr-3">
+          <span className="relative block h-12 w-28 pr-0.5 md:h-14 md:w-32 md:pr-1 lg:h-16 lg:w-36 lg:pr-2">
             <Image
               src="/logo.png"
               alt="NOLA Pool Solutions logo"
@@ -61,11 +61,11 @@ export default function Navigation() {
               sizes="(max-width: 768px) 128px, (max-width: 1024px) 144px, 160px"
             />
           </span>
-          <span className="hidden flex-col leading-tight pr-2 md:flex md:pr-3 lg:pr-4">
-            <span className="text-lg font-semibold tracking-tight text-midnight md:text-xl lg:text-2xl">
+          <span className="hidden flex-col leading-tight pr-1 md:flex md:pr-2 lg:pr-3">
+            <span className="text-xl font-normal tracking-tight text-midnight md:text-2xl lg:text-3xl" style={{ fontFamily: 'var(--font-bebas), sans-serif', letterSpacing: '0.02em' }}>
               NOLA POOL
             </span>
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-cerulean md:text-sm">
+            <span className="text-sm font-semibold italic text-cerulean md:text-base lg:text-lg" style={{ fontFamily: 'var(--font-cormorant), serif' }}>
               Solutions
             </span>
           </span>

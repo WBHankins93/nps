@@ -91,6 +91,9 @@
   --font-heading: var(--font-montserrat);  /* Plus Jakarta Sans - for headings */
   --font-body: var(--font-inter);          /* Work Sans - for body text */
   --font-accent: var(--font-playfair);     /* Playfair Display - for special accents */
+  --font-display: var(--font-bebas);       /* Bebas Neue - for display/hero titles */
+  --font-title: var(--font-montserrat-title); /* Montserrat - for page titles */
+  --font-brand-accent: var(--font-cormorant); /* Cormorant Garamond - for brand accents */
 }
 
 /* FIXED: Only reset margin and box-sizing, NOT padding (Tailwind needs to control padding) */
@@ -293,4 +296,43 @@ button {
 /* Font utility classes */
 .font-accent {
   font-family: var(--font-accent), serif;
+}
+
+.font-bebas {
+  font-family: var(--font-bebas), sans-serif;
+}
+
+.font-montserrat-title {
+  font-family: var(--font-montserrat-title), sans-serif;
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant), serif;
+}
+
+/* Decorative line utility - spans full width of parent */
+.decorative-line {
+  position: relative;
+}
+
+.decorative-line::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent 0%, var(--color-ocean) 50%, transparent 100%);
+  opacity: 0.6;
+}
+
+/* Alternative: Decorative line as separate element */
+.decorative-line-element {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent 0%, var(--color-ocean) 50%, transparent 100%);
+  opacity: 0.6;
+  margin: 0.75rem auto 0;
 }

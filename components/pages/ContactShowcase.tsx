@@ -106,7 +106,7 @@ export default function ContactShowcase() {
             <p className="text-xs uppercase tracking-[0.25em] text-white/60">
               NOLA Pool Solutions
             </p>
-            <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
+            <h1 className="text-3xl font-extrabold md:text-4xl lg:text-5xl text-white decorative-line" style={{ fontFamily: 'var(--font-montserrat-title), sans-serif', letterSpacing: '-0.02em' }}>
               Contact us today!
             </h1>
           </header>

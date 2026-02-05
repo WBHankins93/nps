@@ -76,8 +76,7 @@ export default function Navigation() {
             <Link
               key={item.href}
               href={item.href}
-              className="group relative px-3 py-2 text-base font-medium transition-all duration-300 md:px-4 md:text-lg"
-              className={isActive(item.href) ? 'text-ocean' : 'text-text-secondary'}
+              className={`group relative px-3 py-2 text-base font-medium transition-all duration-300 md:px-4 md:text-lg ${isActive(item.href) ? 'text-ocean' : 'text-text-secondary'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="relative z-10 transition-opacity group-hover:opacity-80">
